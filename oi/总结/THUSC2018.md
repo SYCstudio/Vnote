@@ -1,4 +1,5 @@
 # THUSC2018 总结
+by SYC
 
 ## 综述
 从$PKUWC-NOIWC-HNOI-CTSC-APIO$一路走来，一直不顺。  
