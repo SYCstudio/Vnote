@@ -1,0 +1,96 @@
+vnote_backup_file_826537664 /home/syc/文档/vnote_notebooks/oi/Algorithm/分数规划/[HNOI2009]最小圈.md
+# [HNOI2009]最小圈
+[BZOJ1486 Luogu3199]
+
+考虑带权的有向图 $G=(V,E)$ 以及 $w:E\rightarrow R$ ,每条边 $e=(i,j)(i\neq j,i\in V,j\in V)$ 的权值定义为 $w\_{i,j}$ ，令 $n=|V|$ 。 $c=(c\_1,c\_2,\cdots,c\_k)(c\_i\in V)$ 是 $G$ 中的一个圈当且仅当 $(c\_i,c\_{i+1})(1\le i&lt;k)$ 和 $(c\_k,c\_1)$ 都在 $E$ 中，这时称 $k$ 为圈 $c$ 的长度同时令 $c\_{k+1}=c\_1$ ，并定义圈 $c=(c\_1,c\_2,\cdots,c\_k)$ 的平均值为 $\mu(c)=\sum\limits\_{i=1}^{k} w\_{c\_i,c\_{i+1}}/k$ ，即 $c$ 上所有边的权值的平均值。令 $\mu'(c)=Min(\mu(c))$ 为 $G$ 中所有圈 $c$ 的平均值的最小值。现在的目标是：在给定了一个图 $G=(V,E)$ 以及 $w:E\rightarrow R$ 之后，请求出 $G$ 中所有圈 $c$ 的平均值的最小值 $\mu'(c)=Min(\mu(c))$
+
+题意：给出一张带权有向图，求一个平均值最小的环。
+
+类似分数规划的思想，二分平均值，然后将边权减去这个平均值，查询图中是否有负环，如果有，说明平均值还可以更小，否则，平均值应该更大。当最小环为$0$环时，说明找到答案。
+
+```cpp
+#include<iostream>
+#include<cstdio>
+#include<cstdlib>
+#include<cstring>
+#include<algorithm>
+using namespace std;
+
+#define ll long long
+#define ld long double
+#define mem(Arr,x) memset(Arr,x,sizeof(Arr))
+
+const int maxN=3010;
+const int maxM=10100;
+const ld eps=1e-10;
+const int inf=2147483647;
+
+class EDGE
+{
+public:
+	int u,v;
+	ld w;
+};
+
+int n,m;
+EDGE EE[maxM];
+int edgecnt=0,Head[maxN],Next[maxM],V[maxM],Cnt[maxN];
+ld W[maxM],Dist[maxN];
+bool vis[maxN];
+
+void Add_Edge(int u,int v,ld w);
+bool Check(ld mid);
+bool Spfa(int u);
+
+int main()
+{
+	//freopen("in.in","r",stdin);
+	scanf("%d%d",&n,&m);
+	ld L=inf,R=0,Ans;
+	for (int i=1;i<=m;i++)
+	{
+		scanf("%d%d%LF",&EE[i].u,&EE[i].v,&EE[i].w);
+		L=min(L,EE[i].w);R=max(R,EE[i].w);
+	}
+	R=4500;
+	do
+	{
+		//cout<<L<<" "<<R<<endl;
+		ld mid=(L+R)/2.0;
+		if (Check(mid)) Ans=mid,L=mid+eps;
+		else R=mid-eps;
+	}
+	while (L+eps<=R);
+	printf("%.8LF\n",Ans);
+	return 0;
+}
+
+void Add_Edge(int u,int v,ld w)
+{
+	edgecnt++;Next[edgecnt]=Head[u];Head[u]=edgecnt;V[edgecnt]=v;W[edgecnt]=w;
+	return;
+}
+
+bool Check(ld mid)
+{
+	edgecnt=0;mem(Head,-1);
+	for (int i=1;i<=m;i++) Add_Edge(EE[i].u,EE[i].v,EE[i].w-mid);
+	mem(vis,0);mem(Dist,0);
+	for (int i=1;i<=n;i++) if (Spfa(i)==0) return 0;
+	return 1;
+}
+
+bool Spfa(int u)
+{
+	vis[u]=1;
+	for (int i=Head[u];i!=-1;i=Next[i])
+		if (Dist[u]+W[i]<Dist[V[i]])
+		{
+			if (vis[V[i]]) return 0;
+			Dist[V[i]]=Dist[u]+W[i];
+			if (Spfa(V[i])==0) return 0;
+		}
+	vis[u]=0;
+	return 1;
+}
+```
