@@ -5,6 +5,9 @@
     "sub_directories": [
         {
             "name": "斜率优化"
+        },
+        {
+            "name": "树型动态规划"
         }
     ],
     "version": "1"
