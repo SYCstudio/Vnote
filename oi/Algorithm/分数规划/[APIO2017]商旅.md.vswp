@@ -1,0 +1,156 @@
+vnote_backup_file_826537664 /home/syc/文档/vnote_notebooks/oi/Algorithm/分数规划/[APIO2017]商旅.md
+# [APIO2017]商旅
+[BZOJ4898 BZOJ5367 Luogu3778]
+
+在广阔的澳大利亚内陆地区长途跋涉后，你孤身一人带着一个背包来到了科巴。你被这个城市发达而美丽的市场所深深吸引，决定定居于此，做一个商人。科巴有 $N$ 个集市，集市用从 $1$ 到 $N$ 的整数编号，集市之间通过 $M$ 条单向道路连接，通过每条道路都需要消耗一定的时间。  
+在科巴的集市上，有 $K$ 种不同的商品，商品用从 $1$ 到 $K$ 的整数编号。每个集市对每种商品都有自己的定价，买入和卖出商品的价格可以是不同的。并非每个集市都可以买卖所有的商品：一个集市可能只提供部分商品的双向交易服务；对于一种商品，一个集市也可能只收购而不卖出该商品或只卖出而不收购该商品。如果一个集市收购一种商品，它收购这种商品的数量是不限的，同样，一个集市如果卖出一种商品，则它卖出这种商品的数量也是不限的。  
+为了更快地获得收益，你决定寻找一条盈利效率最高的环路。环路是指带着空的背包从一个集市出发，沿着道路前进，经过若干个市场并最终回到出发点。在环路中，允许多次经过同一个集市或同一条道路。在经过集市时，你可以购买或者卖出商品，一旦你购买了一个商品，你需要把它装在背包里带走。由于你的背包非常小，任何时候你最多只能持有一个商品。在购买一个商品时，你不需要考虑你是否有足够的金钱，但在卖出时，需要注意只能卖出你拥有的商品。  
+从环路中得到的收益为在环路中卖出商品得到的金钱减去购买商品花费的金钱，而一条环路上消耗的时间则是依次通过环路上所有道路所需要花费的时间的总和。环路的盈利效率是指从环路中得到的收益除以花费的时间。需要注意的是，一条没有任何交易的环路的盈利效率为 $0$ 。  
+你需要求出所有消耗时间为正数的环路中，盈利效率最高的环路的盈利效率。答案向下取整保留到整数。如果没有任何一条环路可以盈利，则输出 0 。
+
+可以比较快地想到是分数规划，但是如何列出式子并计算出值并不怎么好想。  
+把合法的答案可以看成是若干段手里有货物或没有货物组合成环。而若从$u->v$手里是有货物且一直没有出售的话，一定是走的$u->v$的最短路。所以可以$Floyed$处理出每一对点的最短路，然后再分数规划。  
+求出最短路后，现在的任务就是二分再寻找是否存在最长路了。  
+注意：官方数据极强，需要考虑不连通、无法到达、不存在合法货物等情况。
+
+```cpp
+#include<iostream>
+#include<cstdio>
+#include<cstdlib>
+#include<cstring>
+#include<algorithm>
+#include<queue>
+using namespace std;
+
+#define ll long long
+#define ld long double
+#define mem(Arr,x) memset(Arr,x,sizeof(Arr))
+
+const int maxN=110;
+const int maxM=10100;
+const int maxK=1010;
+const ld eps=1e-8;
+const int inf=2147483647;
+const ll INF=1e18;
+
+int n,m,K;
+ll In[maxN][maxK],Out[maxN][maxK];
+ll Map[maxN][maxN],Good[maxN][maxN];
+bool vis[maxN];
+ll Dist[maxN];
+queue<int> Q;
+bool inq[maxN];
+int Cnt[maxN];
+
+bool Check(ll k);
+bool Spfa(int uu,ll k);
+
+int main()
+{
+    scanf("%d%d%d",&n,&m,&K);
+    for (int i=1;i<=n;i++) for (int j=1;j<=K;j++) scanf("%lld%lld",&In[i][j],&Out[i][j]);
+    for (int i=1;i<=n;i++) for (int j=1;j<=n;j++) Map[i][j]=INF,Good[i][j]=-INF;
+    for (int i=1;i<=n;i++) Map[i][i]=0;
+    for (int i=1;i<=m;i++)
+    {
+        int u,v,w;scanf("%d%d%d",&u,&v,&w);
+        if (u==v) continue;
+        Map[u][v]=min(Map[u][v],(ll)w);
+    }
+    for (int k=1;k<=n;k++)
+        for (int i=1;i<=n;i++)
+            for (int j=1;j<=n;j++)
+                Map[i][j]=min(Map[i][j],Map[i][k]+Map[k][j]);
+
+    /*
+    for (int i=1;i<=n;i++)
+    {
+        for (int j=1;j<=n;j++)
+            cout<<Map[i][j]<<" ";
+        cout<<endl;
+    }
+    //*/
+
+    ll L=0,R=0,Ans;
+    for (int i=1;i<=n;i++)
+        for (int j=1;j<=n;j++)
+            if (i!=j)
+            {
+                if (Map[i][j]==INF) continue;
+                Good[i][j]=0;
+                for (int k=1;k<=K;k++)
+                    if ((In[i][k]>=0)&&(Out[j][k]>=0)) Good[i][j]=max(Good[i][j],(ll)Out[j][k]-In[i][k]);
+                R=max(R,Good[i][j]);
+            }
+
+	/*
+	for (int i=1;i<=n;i++)
+	{
+		for (int j=1;j<=n;j++)
+			cout<<Good[i][j]<<" ";
+		cout<<endl;
+	}
+	//*/
+
+	//cout<<L<<" "<<R<<endl;
+	
+    do
+    {
+        ll mid=(L+R)>>1;
+        //cout<<"("<<L<<","<<R<<")"<<endl;
+        if (Check(mid)) Ans=mid,L=mid+1;
+        else R=mid-1;
+    }
+    while (L<=R);
+
+    printf("%lld\n",Ans);
+    return 0;
+}
+
+bool Check(ll k)
+{
+    return Spfa(1,k);
+}
+
+bool Spfa(int uu,ll k)
+{
+    while (!Q.empty()) Q.pop();
+    for (int i=1;i<=n;i++)
+    {
+        Q.push(i);
+        Dist[i]=0;inq[i]=1;Cnt[i]=1;
+    }
+    do
+    {
+        int u=Q.front();Q.pop();inq[u]=0;
+        for (int i=1;i<=n;i++)
+            if ((i!=u)&&(Map[u][i]!=INF)&&(Dist[i]<=Dist[u]+Good[u][i]-1ll*(ll)k*Map[u][i]))
+            {
+                Dist[i]=Dist[u]+Good[u][i]-1ll*(ll)k*Map[u][i];
+                if (inq[i]==0){
+					if ((++Cnt[i])>n) return 1;
+                    Q.push(i);inq[i]=1;
+                }
+            }
+        inq[u]=0;
+    }
+    while (!Q.empty());
+    return 0;
+}
+
+/*
+bool Spfa(int u,int k)
+{
+    vis[u]=1;
+    for (int i=1;i<=n;i++)
+        if ((i!=u)&&(Dist[i]<Dist[u]+Good[u][i]-1ll*(ll)k*Map[u][i]))
+        {
+            if (vis[i]) return 0;
+            Dist[i]=Dist[u]+Good[u][i]-1ll*(ll)k*Map[u][i];
+            if (Spfa(i,k)==0) return 0;
+        }
+    vis[u]=0;
+    return 1;
+}
+//*/
+```
