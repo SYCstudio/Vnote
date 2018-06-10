@@ -5,6 +5,9 @@
     "sub_directories": [
         {
             "name": "线段树SegmentTree"
+        },
+        {
+            "name": "可持久化线段树（主席树）"
         }
     ],
     "version": "1"

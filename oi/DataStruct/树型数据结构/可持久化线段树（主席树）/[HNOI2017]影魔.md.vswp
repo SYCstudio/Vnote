@@ -1,0 +1,132 @@
+vnote_backup_file_826537664 /home/sycstudio/文档/vnote_notebooks/oi/DataStruct/树型数据结构/可持久化线段树（主席树）/[HNOI2017]影魔.md
+# [HNOI2017]影魔
+[BZOJ4826 Luogu3722]
+
+影魔,奈文摩尔,据说有着一个诗人的灵魂。事实上,他吞噬的诗人灵魂早已成千上万。千百年来,他收集了各式各样的灵魂,包括诗人、牧师、帝王、乞丐、奴隶、罪人,当然,还有英雄。每一个灵魂,都有着自己的战斗力,而影魔,靠这些战斗力提升自己的攻击。奈文摩尔有 n 个灵魂,他们在影魔宽广的体内可以排成一排,从左至右标号 1 到 n。第 i个灵魂的战斗力为 k[i],灵魂们以点对的形式为影魔提供攻击力,对于灵魂对 i,j(i<j)来说,若不存在 k[s]\(i<s<j)大于 k[i]或者 k[j],则会为影魔提供 p1 的攻击力(可理解为:当 j=i+1 时,因为不存在满足 i<s<j 的 s,从而 k[s]不存在,这时提供 p1 的攻击力;当 j>i+1 时,若max{k[s]|i<s<j}<=min{k[i],k[j]} , 则 提 供 p1 的 攻 击 力 ); 另 一 种 情 况 , 令 c 为k[i+1],k[i+2],k[i+3]......k[j-1]的最大值,若 c 满足:k[i]<c<k[j],或者 k[j]<c<k[i],则会为影魔提供 p2 的攻击力,当这样的 c 不存在时,自然不会提供这 p2 的攻击力;其他情况的点对,均不会为影魔提供攻击力。影的挚友噬魂鬼在一天造访影魔体内时被这些灵魂吸引住了,他想知道,对于任意一段区间[a,b],1<=a<b<=n,位于这些区间中的灵魂对会为影魔提供多少攻击力,即考虑 所有满足a<=i<j<=b 的灵魂对 i,j 提供的攻击力之和。顺带一提,灵魂的战斗力组成一个 1 到 n 的排列:k[1],k[2],...,k[n]。
+
+题目中要求的两种贡献可以这样理解。  
+对于$p1$，即是要求$[l,r]$内的最大值小于$[l]$和$[r]$中的较小值。假设枚举$i$，并得到$i$左边第一个比$i$大的值$L[i]$，右边则得到$R[i]$，则$i$与$L[i]$和$R[i]$也只与它们会对$p1$有贡献。  
+对于$p2$，即要求$[l,r]$内存在一个值在$[l]$和$[r]$之间。还是假设枚举$i$，得到上面所说的$L[i],R[i]$，那么$L[i]$会与$[i+1,R[i]-1]$产生贡献，$R[i]$会与$[L[i]+1,i-1]$产生贡献。  
+上面的两种贡献分别可以转化为二维平面上的点，那么询问就转化为二维数点问题，用可持久化线段树来维护区间加法。
+
+```cpp
+#include<iostream>
+#include<cstdio>
+#include<cstdlib>
+#include<cstring>
+#include<algorithm>
+#include<vector>
+using namespace std;
+
+#define ll long long
+#define mem(Arr,x) memset(Arr,x,sizeof(Arr))
+
+const int maxN=201000;
+const int inf=2147483647;
+
+class SegmentData
+{
+public:
+	ll sum,lz;
+	int ls,rs;
+};
+
+class Data
+{
+public:
+	int l,r,key;
+};
+
+int n,m,p1,p2;
+int nodecnt,root[maxN],Val[maxN],St[maxN],L[maxN],R[maxN];
+SegmentData S[maxN*100];
+vector<Data> V[maxN];
+
+void Build(int &now,int l,int r);
+void Modify(int &now,int l,int r,int ql,int qr,int key);
+ll Query(int r1,int r2,int l,int r,int ql,int qr);
+
+int main()
+{
+	scanf("%d%d%d%d",&n,&m,&p1,&p2);
+	for (int i=1;i<=n;i++) scanf("%d",&Val[i]);
+	int top=0;St[0]=0;
+	for (int i=1;i<=n;i++)
+	{
+		while ((top)&&(Val[St[top]]<=Val[i])) top--;
+		L[i]=St[top];St[++top]=i;
+	}
+	top=0;St[0]=n+1;
+	for (int i=n;i>=1;i--)
+	{
+		while ((top)&&(Val[St[top]]<=Val[i])) top--;
+		R[i]=St[top];St[++top]=i;
+	}
+
+	//for (int i=1;i<=n;i++) cout<<L[i]<<" ";cout<<endl;
+	//for (int i=1;i<=n;i++) cout<<R[i]<<" ";cout<<endl;
+
+	for (int i=1;i<=n;i++)
+	{
+		if (L[i]) V[i].push_back((Data){L[i],L[i],p1});
+		if (R[i]!=n+1) V[i].push_back((Data){R[i],R[i],p1});
+		if ((L[i])&&(i+1<=R[i]-1)) V[L[i]].push_back((Data){i+1,R[i]-1,p2});
+		if ((R[i])&&(L[i]+1<=i-1)) V[R[i]].push_back((Data){L[i]+1,i-1,p2});
+	}
+	Build(root[0],1,n);
+	for (int i=1;i<=n;i++)
+	{
+		root[i]=root[i-1];
+		for (int j=0;j<V[i].size();j++)
+		{
+			//cout<<"["<<V[i][j].l<<","<<V[i][j].r<<"] "<<V[i][j].key<<endl;
+			Modify(root[i],1,n,V[i][j].l,V[i][j].r,V[i][j].key);
+		}
+	}
+
+	for (int i=1;i<=m;i++)
+	{
+		int l,r;scanf("%d%d",&l,&r);
+		printf("%lld\n",Query(root[l-1],root[r],1,n,l,r));
+	}
+
+	return 0;
+}
+
+void Build(int &now,int l,int r)
+{
+	now=++nodecnt;
+	if (l==r) return;
+	int mid=(l+r)>>1;
+	Build(S[now].ls,l,mid);Build(S[now].rs,mid+1,r);
+	return;
+}
+
+void Modify(int &now,int l,int r,int ql,int qr,int key)
+{
+	S[++nodecnt]=S[now];now=nodecnt;
+	S[now].sum+=1ll*key*(qr-ql+1);
+	if ((l==ql)&&(r==qr)){
+		S[now].lz+=key;return;
+	}
+	int mid=(l+r)>>1;
+	if (qr<=mid) Modify(S[now].ls,l,mid,ql,qr,key);
+	else if (ql>=mid+1) Modify(S[now].rs,mid+1,r,ql,qr,key);
+	else
+	{
+		Modify(S[now].ls,l,mid,ql,mid,key);
+		Modify(S[now].rs,mid+1,r,mid+1,qr,key);
+	}
+	return;
+}
+
+ll Query(int r1,int r2,int l,int r,int ql,int qr)
+{
+	if ((l==ql)&&(r==qr)) return S[r2].sum-S[r1].sum;
+	ll ret=1ll*(qr-ql+1)*(S[r2].lz-S[r1].lz);
+	int mid=(l+r)>>1;
+	if (qr<=mid) return ret+Query(S[r1].ls,S[r2].ls,l,mid,ql,qr);
+	else if (ql>=mid+1) return ret+Query(S[r1].rs,S[r2].rs,mid+1,r,ql,qr);
+	else return ret+Query(S[r1].ls,S[r2].ls,l,mid,ql,mid)+Query(S[r1].rs,S[r2].rs,mid+1,r,mid+1,qr);
+}
+```
