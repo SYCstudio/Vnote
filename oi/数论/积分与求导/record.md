@@ -1,0 +1,40 @@
+# 定积分
+
+## 定积分定义
+设函数$f(x)$在$[a,b]$上连续，将区间$[a,b]$分成$n$个子区间$[x\_0,x\_1], (x\_1,x\_2], (x\_2,x\_3], …, (x\_{n-1},x\_n]$，其中$x\_0=a，x\_n=b$。可知各区间的长度依次是：$\Delta x\_1=x\_1-x\_0$，在每个子区间$(x\_{i-1},x\_i]$中任取一点$\delta \_{i(1,2,...,n)}$，作和式$\sum\_{i=1}^{n}f(\delta\_i) \Delta X\_i$，该和式叫做积分和，设$\lambda=max(\Delta x\_1, \Delta x\_2, …, \Delta x\_n)$（即$\lambda$是最大的区间长度），如果当$\lambda→0$时，积分和的极限存在，则这个极限叫做函数$f(x)$在区间$[a,b]$的定积分，记为  
+$$\int\_{a}^{b} f(x)dx$$  
+与不定积分的区别在于，它积分出来后的值是一个**常数**而不是一个函数。
+
+## 定积分的性质
+### 1.a=b时
+$$\int\_a^b f(x)dx=0$$
+
+### 2.a>b时
+$$\int\_a^b f(x)dx=-\int\_b^a f(x)dx$$
+
+### 3.常数可提至积分符号前
+$$\int\_a^b C \times f(x)dx=C \times \int\_a^b f(x)dx$$
+
+### 4. 代数和的积分等于积分的代数和
+$$\int\_a^b [f(x)\pm g(x)]dx=\int\_a^b f(x)dx\pm\int\_a^b g(x)dx$$
+
+### 5.定积分的可加性
+$$\int\_a^b f(x)dx=\int\_a^c f(x)dx+\int\_c^b f(x)dx$$
+
+### 6.保号性
+若在$[a,b]$上有$f(x) \ge 0$，则有  
+$$\int\_a^b f(x)dx \ge 0$$
+
+### 7. 积分中值定理
+若函数$f(x)$在$[a,b]$上连续，那么至少存在一个点$\varepsilon$满足  
+$$\int\_a^b f(x)dx=f(\varepsilon) \times (b-a)$$
+
+## 积分公式
+### 牛顿·莱布尼茨公式
+如果$f(x)$是$[a,b]$上的连续函数，并且有$F'(x)=f(x)$，则  
+$$\int\_a^b f(x)dx=F(b)-F(a)$$
+### 基本积分公式（基本导数公式的逆）
+$$\int\_a^b k\ dx=kx+C$$
+$$\int\_a^b x^\mu dx=\frac{x^{\mu+1}}{\mu+1}+C$$
+$$\int\_a^b \frac{dx}{x}=\ln |x|+c$$
+$$\int\_a^b k^x dx=\frac{k^x}{\ln k}+c$$
