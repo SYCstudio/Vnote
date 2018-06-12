@@ -5,6 +5,9 @@
     "sub_directories": [
         {
             "name": "各种距离"
+        },
+        {
+            "name": "网络流"
         }
     ],
     "version": "1"
