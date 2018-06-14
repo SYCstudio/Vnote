@@ -13,6 +13,9 @@
     "sub_directories": [
         {
             "name": "对抗搜索"
+        },
+        {
+            "name": "巴什博弈"
         }
     ],
     "version": "1"
