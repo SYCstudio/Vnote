@@ -1,0 +1,24 @@
+{
+    "created_time": "2018-06-14T08:40:06Z",
+    "files": [
+        {
+            "attachment_folder": "",
+            "attachments": [
+            ],
+            "created_time": "2018-06-14T08:40:41Z",
+            "modified_time": "2018-06-14T09:44:23Z",
+            "name": "后缀自动机.md"
+        },
+        {
+            "attachment_folder": "",
+            "attachments": [
+            ],
+            "created_time": "2018-06-14T09:44:41Z",
+            "modified_time": "2018-06-14T09:44:41Z",
+            "name": "后缀自动机一·基本概念.md"
+        }
+    ],
+    "sub_directories": [
+    ],
+    "version": "1"
+}

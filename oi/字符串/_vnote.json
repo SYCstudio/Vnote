@@ -5,6 +5,9 @@
     "sub_directories": [
         {
             "name": "Trie树"
+        },
+        {
+            "name": "后缀自动机"
         }
     ],
     "version": "1"
