@@ -1,0 +1,114 @@
+vnote_backup_file_826537664 /home/syc/文档/vnote_notebooks/oi/字符串/后缀自动机/[HAOI2016]找相同字符.md
+# [HAOI2016]找相同字符
+[BZOJ4566 Luogu3181]
+
+给定两个字符串，求出在两个字符串中各取出一个子串使得这两个子串相同的方案数。两个方案不同当且仅当这两个子串中有一个位置不同。
+
+后缀自动机做法：  
+把其中一个串建成后缀自动机，然后把另一个在上面匹配。类似$AC自动机中$跳$Fail$指针，这里跳$parent$树，找到第一个能走的地方，标记该位置走过次数$+1$。由于父亲代表的子串是完全包含于儿子的，所以统计完后要自底向上把儿子的出现次数累加到父亲。  
+但需要注意的是，每走到一个地方，当前的答案要及时计算，因为当前点的子串只能算一个，而往上累加的子串是可以算$longest(st)-longest(parent(st))$个的。
+
+```cpp
+#include<iostream>
+#include<cstdio>
+#include<cstdlib>
+#include<cstring>
+#include<algorithm>
+using namespace std;
+
+#define ll long long
+#define mem(Arr,x) memset(Arr,x,sizeof(Arr))
+
+const int maxN=201000;
+const int maxAlpha=26;
+const int inf=2147483647;
+
+class Node
+{
+public:
+	int son[maxAlpha];
+	int fa,len;
+};
+
+int l1,l2;
+char str[maxN];
+int nodecnt=1,root=1,last=1;
+Node S[maxN<<1];
+ll Endpos[maxN<<1];
+ll Sorter[maxN<<1],Id[maxN<<1],Cnt[maxN<<1],F[maxN<<1];
+
+void Insert(int c);
+
+int main()
+{
+	scanf("%s",str+1);
+	l1=strlen(str+1);
+	for (int i=1;i<=l1;i++) Insert(str[i]-'a');
+
+	/*
+	for (int i=1;i<=nodecnt;i++)
+		for (int j=0;j<maxAlpha;j++)
+			if (S[i].son[j])
+				cout<<i<<" -> "<<S[i].son[j]<<" ["<<(char)(j+'a')<<"]"<<endl;
+	//*/
+
+	for (int i=1;i<=nodecnt;i++) Sorter[S[i].len]++;
+	for (int i=1;i<=l1;i++) Sorter[i]+=Sorter[i-1];
+	for (int i=nodecnt;i>=1;i--) Id[Sorter[S[i].len]--]=i;
+
+	for (int i=nodecnt;i>=1;i--) Endpos[S[Id[i]].fa]+=Endpos[Id[i]];
+
+	//cout<<"Endpos:";for (int i=1;i<=nodecnt;i++) cout<<Endpos[i]<<" ";cout<<endl;
+
+	scanf("%s",str+1);
+	l2=strlen(str+1);
+
+	ll Ans=0;
+	for (int i=1,now=root,l=0;i<=l2;i++)
+	{
+		int c=str[i]-'a';
+		if (S[now].son[c]) now=S[now].son[c],l++;
+		else
+		{
+			while ((now!=0)&&(S[now].son[c]==0)) now=S[now].fa;
+			if (S[now].son[c]) l=S[now].len+1,now=S[now].son[c];
+			else l=0,now=root;
+		}
+		Cnt[now]++;
+		//cout<<now<<" ";
+		Ans=Ans+Endpos[now]*(l-S[S[now].fa].len);
+	}
+	//cout<<endl;
+	//cout<<"Cnt:";for (int i=1;i<=nodecnt;i++) cout<<Cnt[i]<<" ";cout<<endl;
+
+	for (int i=nodecnt;i>=1;i--) F[S[Id[i]].fa]+=F[Id[i]]+Cnt[Id[i]];
+
+	//cout<<"F:";for (int i=1;i<=nodecnt;i++) cout<<F[i]<<" ";cout<<endl;
+
+	for (int i=2;i<=nodecnt;i++) Ans=Ans+Endpos[i]*F[i]*(S[i].len-S[S[i].fa].len);
+
+	printf("%lld\n",Ans);
+	return 0;
+}
+
+void Insert(int c)
+{
+	int np=++nodecnt,p=last;last=nodecnt;
+	S[np].len=S[p].len+1;Endpos[np]=1;
+	while ((p!=0)&&(S[p].son[c]==0)) S[p].son[c]=np,p=S[p].fa;
+	if (p==0) S[np].fa=root;
+	else
+	{
+		int q=S[p].son[c];
+		if (S[p].len+1==S[q].len) S[np].fa=q;
+		else
+		{
+			int nq=++nodecnt;S[nq]=S[q];
+			S[nq].len=S[p].len+1;
+			S[q].fa=S[np].fa=nq;
+			while ((p!=0)&&(S[p].son[c]==q)) S[p].son[c]=nq,p=S[p].fa;
+		}
+	}
+	return;
+}
+```
