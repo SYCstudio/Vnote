@@ -1,0 +1,284 @@
+vnote_backup_file_826537664 /home/syc/文档/vnote_notebooks/oi/Algorithm/图论/网络流/网络流相关.md
+# 网络流相关
+## 最大流
+### Dinic
+```cpp
+bool Bfs()
+{
+	mem(Depth,-1);
+	int h=1,t=0;Depth[SS]=1;Q[1]=SS;
+	do
+		for (int u=Q[++t],i=Head[u];i!=-1;i=Next[i])
+			if ((E[i].flow>0)&&(Depth[E[i].v]==-1))
+				Depth[Q[++h]=E[i].v]=Depth[u]+1;
+	while (t!=h);
+	return Depth[TT]!=-1;
+}
+
+int dfs(int u,int flow)
+{
+	if (u==TT) return flow;
+	for (int i=Head[u];i!=-1;i=Next[i])
+		if ((E[i].flow>0)&&(Depth[E[i].v]==Depth[u]+1))
+		{
+			int di=dfs(E[i].v,min(flow,E[i].flow));
+			if (di){
+				E[i].flow-=di;E[i^1].flow+=di;return di;
+			}
+		}
+	return 0;
+}
+```
+
+### ISAP
+```cpp
+主过程，修改Depth,Gap优化
+while (Depth[S]<n)
+{
+    if (u==T)
+    {
+        Ans+=ISAP();
+        u=S;
+    }
+    RG bool flag=0;
+    for (RG int now=cur[u];now!=-1;now=Next[now])
+    {
+        int v=E[now].v;
+        if ((E[now].w>0)&&(Depth[u]==Depth[v]+1))
+        {
+            flag=1;
+            Path[v]=now;
+            cur[u]=now;
+            u=v;
+            break;
+        }
+    }
+		if (!flag)
+		{
+        RG int MIN=n-1;
+        for (i=Head[u];i!=-1;i=Next[i])
+        if (E[i].w>0) MIN=min(MIN,Depth[E[i].v]);
+        Gap[Depth[u]]--;
+        if (Gap[Depth[u]]==0) break;
+        Depth[u]=MIN+1;
+        Gap[Depth[u]]++;
+        cur[u]=Head[u];
+        if (u!=S) u=E[Path[u]].u;
+    }
+}
+倒着BFS预处理Depth
+IL void Bfs()
+{
+    RG int h=1,t=0;
+    Q[1]=T;
+    mem(Depth,-1);
+    Depth[T]=0;
+    do
+    {
+		t++;if (t>=queuesize) t=0;RG int u=Q[t];
+		Gap[Depth[u]]++;
+		for (RG int i=Head[u];i!=-1;i=Next[i])
+		{
+			RG int v=E[i].v;
+			if ((E[i].w==0)&&(Depth[v]==-1))
+			{
+				Depth[v]=Depth[u]+1;
+				h++;if (h>=queuesize) h=0;
+				Q[h]=v;
+			}
+		}
+    }
+    while (t!=h);
+    return;
+}
+ISAP得到流并增广
+IL int ISAP()
+{
+    RG int u=T,flow=inf;
+    while (u!=S)
+    {
+		flow=min(flow,E[Path[u]].w);
+		u=E[Path[u]].u;
+    }
+    u=T;
+    while (u!=S)
+    {
+		E[Path[u]].w-=flow;
+		E[Path[u]^1].w+=flow;
+		u=E[Path[u]].u;
+    }
+    return flow;
+}
+```
+
+#### 最小费用流
+其实就是$spfa$
+```cpp
+bool spfa()
+{
+	while (!Q.empty()) Q.pop();mem(inq,0);
+	for (int i=1;i<=Y;i++) Dist[i]=inf;
+	Dist[S]=0;inq[S]=1;Q.push(S);Flow[S]=inf;
+	do
+	{
+		int u=Q.front();Q.pop();
+		for (int i=Head[u];i!=-1;i=Next[i])
+		{
+			//if (E[i].flow>0) cout<<u<<" -> "<<E[i].v<<" "<<Dist[u]<<" "<<E[i].w<<" "<<Dist[E[i].v]<<endl;
+			if ((E[i].flow>0)&&(Dist[u]+E[i].w+eps<Dist[E[i].v]))
+			{
+				Dist[E[i].v]=Dist[u]+E[i].w;Flow[E[i].v]=min(Flow[u],E[i].flow);Path[E[i].v]=i;
+				//cout<<"Update:"<<E[i].v<<" "<<Dist[E[i].v]<<" "<<Flow[E[i].v]<<endl;
+				if (inq[E[i].v]==0){
+					inq[E[i].v]=1;Q.push(E[i].v);
+				}
+			}
+		}
+		inq[u]=0;
+		//cout<<"Dist:";for (int i=1;i<=Y;i++) cout<<Dist[i]<<" ";cout<<endl;
+	}
+	while (!Q.empty());
+	//cout<<Dist[T]<<endl;
+	//for (int i=1;i<=Y;i++) cout<<Flow[i]<<" ";cout<<endl;
+	//for (int i=1;i<=Y;i++) cout<<Dist[i]<<" ";cout<<endl;
+	return Dist[T]!=inf;
+}
+```
+
+## 上下界网络流
+### 无源无汇上下界可行流
+无源无汇可行流的条件  
+> 1.对于每一条边，流量大于等于下界  
+> 2.对于每一个点，$\sum 入流=\sum 出流$
+
+可行流算法的核心是将一个不满足流量守恒的初始流调整成满足流量守恒的流。流量守恒,即每个点的总流入量=总流出量。  
+如果存在一个可行流，那么一定满足每条边的流量都大于等于流量的下限。因此我们可以令每条边的流量等于流量下限，得到一个初始流，然后建出这个流的残量网络。(即：每条边的流量等于这条边的流量上限与流量下限之差)这个初始流不一定满足流量守恒，因此最终的可行流一定是在这个初始流的基础上增大了一些边的流量使得所有点满足流量守恒。  
+因此我们考虑在残量网络上求出一个另不满足流量守恒的附加流，使得这个附加流和我们的初始流合并之后满足流量守恒，即:  
+> 如果某个点在所有边流量等于下界的初始流中满足流量守恒，那么这个点在附加流中也满足流量守恒，
+> 如果某个点在初始流中的流入量比流出量多x，那么这个点在附加流中的流出量比流入量多x。  
+> 如果某个点在初始流中的流入量比流出量少x，那么这个点在附加流中的流出量比流入量少x。
+
+可以认为附加流中一条从u到v的边上的一个流量代表将原图中u到v的流量增大1。  
+X的数值可以枚举x的所有连边求出。比较方便的写法是开一个数组A[]，A[i]表示i在初始流中的流入量-流出量的值，那么A[i]的正负表示流入量和流出量的大小关系，下面就用A[i]表示初始流中i的流入量-流出量。  
+但是dinic算法能够求的是满足流量守恒的有源汇最大流，不能在原网络上直接求一个这样的无源汇且不满足流量守恒的附加流。注意到附加流是在原网络上不满足流量守恒的，这启发我们添加一些原网络之外的边和点，用这些边和点实现”原网络上流量不守恒”的限制。  
+具体地，如果一个点i在原网络上的附加流中需要满足流入量>流出量(初始流中流入量<流出量，A[i]<0)，那么我们需要给多的流入量找一个去处，因此我们建一条从i出发流量=-A[i]的边。如果A[i]>0，也就是我们需要让附加流中的流出量>流入量，我们需要让多的流出量有一个来路，因此我们建一条指向i的流量=A[i]的边。  
+当然，我们所新建的从i出发的边也要有个去处，指向i的边也要有个来路，因此我们新建一个虚拟源点ss和一个虚拟汇点tt(双写字母是为了和有源汇网络流中的源点s汇点t相区分)。新建的指向i的边都从ss出发，从i出发的边都指向tt。一个点要么有一条边指向tt，要么有一条边来自ss。  
+指向tt的边的总流量上限一定等于ss流出的边的总流量上限，因为每一条边对两个点的A[i]贡献一正一负大小相等，所以全部点的A[i]之和等于0，即小于0的A[i]之和的绝对值=大于0的A[i]之和的绝对值。  
+如果我们能找到一个流满足新加的边都满流，这个流在原图上的部分就是我们需要的附加流(根据我们的建图方式，“新加的边都满流”和”附加流合并上初始流得到流量平衡的流”是等价的约束条件)。  
+那么怎样找出一个新加的边都满流的流呢?可以发现假如存在这样的方案，这样的流一定是我们所建出的图的ss-tt最大流，所以跑ss到tt的最大流即可。如果最大流的大小等于ss出发的所有边的流量上限之和(此时指向tt的边也一定满流，因为这两部分边的流量上限之和相等)。  
+最后，每条边在可行流中的流量=容量下界+附加流中它的流量(即跑完dinic之后所加反向边的权值)。
+
+```cpp
+[ZOJ2314]直接求可行环流
+#include<iostream>
+#include<cstdio>
+#include<cstdlib>
+#include<cstring>
+#include<algorithm>
+using namespace std;
+
+#define ll long long
+#define mem(Arr,x) memset(Arr,x,sizeof(Arr))
+
+const int maxN=250;
+const int maxM=maxN*maxN*5;
+const int inf=2147483647;
+
+class Edge
+{
+public:
+	int v,flow,cap;
+};
+
+class EDGE
+{
+public:
+	int u,v,l,r,id;
+};
+
+int n,m;
+int SS,TT;
+int edgecnt,Head[maxN],Next[maxM];
+int Sum[maxN];
+Edge E[maxM];
+EDGE EE[maxM];
+int Depth[maxN],Q[maxN],cur[maxN];
+
+void Add_Edge(int u,int v,int flow);
+bool Bfs();
+int dfs(int u,int flow);
+
+int main()
+{
+	int TTT;scanf("%d",&TTT);
+	while (TTT--)
+	{
+		scanf("%d%d",&n,&m);
+		edgecnt=-1;mem(Head,-1);mem(Sum,0);
+		SS=n+1;TT=n+2;
+		for (int i=1;i<=m;i++)
+		{
+			scanf("%d%d%d%d",&EE[i].u,&EE[i].v,&EE[i].l,&EE[i].r);
+			EE[i].id=edgecnt+1;
+			Add_Edge(EE[i].u,EE[i].v,EE[i].r-EE[i].l);
+			Sum[EE[i].v]+=EE[i].l;Sum[EE[i].u]-=EE[i].l;
+		}
+		int sum1=0,sum2=0;
+		for (int i=1;i<=n;i++)
+			if (Sum[i]>=0) Add_Edge(SS,i,Sum[i]),sum1+=Sum[i];
+			else Add_Edge(i,TT,-Sum[i]),sum2-=Sum[i];
+		//cout<<"Init finish sum:"<<sum1<<" "<<sum2<<endl;
+		//for (int i=1;i<=n;i++) cout<<Sum[i]<<" ";cout<<endl;
+		
+		int mxflow=0;
+		while (Bfs())
+		{
+			for (int i=1;i<=TT;i++) cur[i]=Head[i];
+			while (int di=dfs(SS,inf)) mxflow+=di;
+		}
+
+		if (mxflow!=sum1) printf("NO\n");
+		else
+		{
+			printf("YES\n");
+			for (int i=1;i<=m;i++) printf("%d\n",EE[i].l+E[EE[i].id].cap-E[EE[i].id].flow);
+		}
+
+		if (TTT) printf("\n");
+	}
+	return 0;
+}
+
+void Add_Edge(int u,int v,int flow)
+{
+	Next[++edgecnt]=Head[u];Head[u]=edgecnt;E[edgecnt]=((Edge){v,flow,flow});
+	Next[++edgecnt]=Head[v];Head[v]=edgecnt;E[edgecnt]=((Edge){u,0,0});
+	return;
+}
+
+bool Bfs()
+{
+	mem(Depth,-1);
+	int h=1,t=0;Depth[SS]=1;Q[1]=SS;
+	do
+		for (int u=Q[++t],i=Head[u];i!=-1;i=Next[i])
+			if ((E[i].flow>0)&&(Depth[E[i].v]==-1))
+				Depth[Q[++h]=E[i].v]=Depth[u]+1;
+	while (t!=h);
+	return Depth[TT]!=-1;
+}
+
+int dfs(int u,int flow)
+{
+	if (u==TT) return flow;
+	for (int i=Head[u];i!=-1;i=Next[i])
+		if ((E[i].flow>0)&&(Depth[E[i].v]==Depth[u]+1))
+		{
+			int di=dfs(E[i].v,min(flow,E[i].flow));
+			if (di){
+				E[i].flow-=di;E[i^1].flow+=di;return di;
+			}
+		}
+	return 0;
+}
+```
