@@ -5,6 +5,9 @@
     "sub_directories": [
         {
             "name": "积分与求导"
+        },
+        {
+            "name": "多项式和快速傅里叶变换"
         }
     ],
     "version": "1"
