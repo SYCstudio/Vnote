@@ -1,0 +1,13 @@
+vnote_backup_file_826537664 /home/syc/文档/vnote_notebooks/oi/数论/中国剩余定理/中国剩余定理CRT.md
+# 中国剩余定理CRT
+## 基本内容
+中国剩余定理给出了下图所示的一元线性同余方程组有解的判定条件，并用构造法给出了在有解情况下解的具体形式
+![CRT-1](_v_images/_crt1_1529849708_1045834158.png)
+
+## 构造方法
+设 $M = \prod\_1^n m\_i$ ，并设 $M\_i = \frac{M}{m\_i}$ 是除了$m\_i$以外的$n-1$个整数的乘积。  
+设 $t\_i = M\_i^{-1} \mod m\_i$ ，即$t\_i$为$M\_i$模 $m\_i$ 意义下的逆元，$M\_i \times t\_i \equiv 1 \pmod {m\_i},i \in \lbrace 1,2,3,…,n \rbrace$  
+方程的通解形式为$x=\sum a\_i \times t\_i \times M\_i $  
+而在模$M$的意义下，只要一个。
+
+（未完）https://blog.csdn.net/tick_tock97/article/details/71313058
