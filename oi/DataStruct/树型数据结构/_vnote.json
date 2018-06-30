@@ -11,6 +11,9 @@
         },
         {
             "name": "树套树"
+        },
+        {
+            "name": "LinkCutTree"
         }
     ],
     "version": "1"
