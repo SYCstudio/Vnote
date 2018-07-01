@@ -355,3 +355,13 @@ rename  's/^/asdasdasd/' *
 `ssh-keygen -t rsa -C "youremail@example.com"` 创建本地sshkey  会生成在.ssh目录中两个文件，`id_rsa`和`id_rsa.pub`  然后登录Github将`id_rsa.pub`中的内容放入设置中
 ### 设置开机自启动项
 `gnome-session-properties`
+
+### 7z压缩和解压
+解压：`7za x XXX.7z -r -o./`  
+`x`表示解压，`-r`表示递归所有子文件夹，`-o`后面直接接目录名称（无空格）
+
+压缩：`7za a -t7z -r XXX.7z ./*`  
+`a`表示压缩，`-t`后面接压缩格式（默认.7z），`-r`递归所有子文件夹，`XXX.7z`是需要的文件名。
+
+### rar压缩和解压
+`rar x XXX.rar`
