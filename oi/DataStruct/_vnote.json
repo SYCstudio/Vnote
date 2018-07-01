@@ -5,6 +5,9 @@
     "sub_directories": [
         {
             "name": "树型数据结构"
+        },
+        {
+            "name": "线性数据结构"
         }
     ],
     "version": "1"
