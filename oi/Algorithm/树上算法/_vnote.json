@@ -5,6 +5,9 @@
     "sub_directories": [
         {
             "name": "树链剖分"
+        },
+        {
+            "name": "点分治"
         }
     ],
     "version": "1"
