@@ -5,6 +5,9 @@
     "sub_directories": [
         {
             "name": "分块"
+        },
+        {
+            "name": "单调队列"
         }
     ],
     "version": "1"
