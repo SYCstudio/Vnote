@@ -17,6 +17,9 @@
         },
         {
             "name": "树状数组BIT"
+        },
+        {
+            "name": "Splay"
         }
     ],
     "version": "1"
