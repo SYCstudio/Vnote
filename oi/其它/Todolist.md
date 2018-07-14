@@ -11,7 +11,6 @@ Meet in the middle
 动态DP
 最小树形图
 dsu on tree
-多项式
 长链剖分
 各种博弈
 拉格朗日差值
@@ -29,7 +28,7 @@ ISAP
 四边形不等式
 min_25筛
 单纯型
-置换
+群论，置换群
 可持久化平衡树
 Dancing links
 最小表示法
@@ -38,3 +37,9 @@ FWT 和 高维前缀和
 边分治
 哈密顿回路
 Miller Robin素数测试与Pollcard Rho因数分解
+BSGS
+中国剩余定理
+卢卡斯定理/扩展卢卡斯定理
+zkw线段树
+Polya计数
+burnside引理
