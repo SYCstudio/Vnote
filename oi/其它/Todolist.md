@@ -1,6 +1,5 @@
 # Todolist
 Matrix Tree
-树上莫队
 三分
 Meet in the middle
 弦图
@@ -24,7 +23,6 @@ ISAP
 笛卡尔树
 可持久化heap
 插头DP
-圆方树和仙人掌
 四边形不等式
 min_25筛
 单纯型
@@ -32,7 +30,6 @@ min_25筛
 可持久化平衡树
 Dancing links
 最小表示法
-FWT 和 高维前缀和
 可持久化并查集
 边分治
 哈密顿回路

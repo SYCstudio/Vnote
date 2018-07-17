@@ -11,6 +11,9 @@
         },
         {
             "name": "树上莫队分块"
+        },
+        {
+            "name": "dsu on tree"
         }
     ],
     "version": "1"
