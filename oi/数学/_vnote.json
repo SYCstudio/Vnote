@@ -20,6 +20,9 @@
         },
         {
             "name": "FWT快速沃尔什变换"
+        },
+        {
+            "name": "MatrixTree定理"
         }
     ],
     "version": "1"
