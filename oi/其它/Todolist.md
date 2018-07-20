@@ -1,5 +1,4 @@
 # Todolist
-Matrix Tree
 三分
 Meet in the middle
 弦图
@@ -9,7 +8,6 @@ Meet in the middle
 动态点分治加强
 动态DP
 最小树形图
-dsu on tree
 长链剖分
 各种博弈
 拉格朗日差值
@@ -40,3 +38,4 @@ BSGS
 zkw线段树
 Polya计数
 burnside引理
+线段树优化Dij
