@@ -15,7 +15,6 @@ Meet in the middle
 类欧几里得
 斯坦纳树
 最小割树
-回文自动机
 扩展KMP
 ISAP
 笛卡尔树
