@@ -8,6 +8,14 @@
             "created_time": "2018-07-21T11:24:00Z",
             "modified_time": "2018-07-21T11:24:00Z",
             "name": "[JSOI2016]扭动的回文串.md"
+        },
+        {
+            "attachment_folder": "",
+            "attachments": [
+            ],
+            "created_time": "2018-07-28T14:09:11Z",
+            "modified_time": "2018-07-28T14:09:11Z",
+            "name": "有限确定状态自动机.md"
         }
     ],
     "sub_directories": [
@@ -28,6 +36,9 @@
         },
         {
             "name": "Manacher"
+        },
+        {
+            "name": "有限确定状态自动机DFA"
         }
     ],
     "version": "1"
