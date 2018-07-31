@@ -41,3 +41,4 @@ burnside引理
 线段树分治
 二进制分组
 并查集重构树
+猫树http://immortalco.blog.uoj.ac/blog/2102
