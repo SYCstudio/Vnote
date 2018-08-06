@@ -260,14 +260,14 @@ sudo apt-get install gnome-pie
 ```
 
 #### ZSH
-#### zsh安装和调整
+##### zsh安装和调整
 安装 两种方式：
 ```plain
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)" 
 sh -c "$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)" 
 ```
 
-#### 主题
+##### zsh主题
 比较推荐：`agnoster-fcamblor`　需要搭配 `Powerline fonts`字体使用  
 主题：github：https://github.com/fcamblor/oh-my-zsh-agnoster-fcamblor  
 字体：https://github.com/powerline/fonts  
@@ -275,6 +275,22 @@ sh -c "$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install
 主题均保存在中 `~/.oh-my-zsh/themes` ，修改的时候修改 `~/.zshrc` 文件，找到 `ZSH_THEME="××××"` ，修改为对应的名称。
 字体修改为 `powerline` 的字体就不会出现乱码  
 终端背景颜色：`#03183B`
+
+#### Topcoder Arena
+##### 安装
+在终端安装`icedtea-netx`  
+`sudo apt-get install icedtea-netx`  
+下载`jlnp`文件：`http://hnbc2013.b0.upaiyun.com/topcoder.jnlp` 或参见附件  
+到其目录下，执行`javaws topcoder.jnlp`，可能会有几个对话框，选择`Yes`，`是`等  
+下载插件`greed.jar`：`http://dreamchaser.b0.upaiyun.com/usr/uploads/2018/02/4002006407.jar`或参见附件  
+新建$Topcoder$工作目录，登录$arena$ ，选择$Options-Editor$ 。  
+点击 $Add$ 按钮，$name$ 填写 $greed$，$EntryPoint$ 填写 $greed.Greed$ ，点 $ClassPath$ 后面的 $Browse$ ，找到目录下的插件，然后$OK$   。
+选中新增加的插件，点击下面的 $Configure$，填写上面工作目录的路径（从$home$写起，如 /home/xxxxxx/tc-workspace/ ）  
+点击 $Verify\ Save$ ，勾选 $Default$ 和 $At Start$两个选项。  
+##### 做题
+Practice Rooms -> 找到对应的比赛  
+在中间 Select One 处选择一道题，会打开题目的页面。此时返回刚刚建立的工作目录，会看到自动生成的文件夹，里面有题目的样例代码（一个空壳函数），可以直接在代码上修改，不要动其他的函数和主函数。编译运行后，这份代码的主函数会自动测试样例，你也可以在 .sample 文件中加入自己的测试用例，参考其他样例的格式写就好了。  
+确认无误后，回到arena，依次点击compile，submit。关闭窗口，回到比赛页面，点 practice options-> run system test 即可运行系统测试，获得测试结果。
 
 ## Ubuntu系统常见问题汇总
 
