@@ -20,6 +20,9 @@
         },
         {
             "name": "Splay"
+        },
+        {
+            "name": "并查集"
         }
     ],
     "version": "1"
