@@ -1,0 +1,69 @@
+vnote_backup_file_826537664 /home/sycstudio/文档/vnote_notebooks/oi/Algorithm/动态规划/[APIO2009]采油区域.md
+# [APIO2009]采油区域
+[BZOJ1177 Luogu3625]
+
+Siruseri 政府决定将石油资源丰富的 Navalur 省的土地拍卖给私人承包商以 建立油井。被拍卖的整块土地为一个矩形区域，被划分为 M×N 个小块。 Siruseri 地质调查局有关于 Navalur 土地石油储量的估测数据。这些数据表示 为 M×N 个正整数，即对每一小块土地石油储量的估计值。 为了避免出现垄断，政府规定每一个承包商只能承包一个由 K×K 块相连的 土地构成的正方形区域。 AoE 石油联合公司由三个承包商组成，他们想选择三块互不相交的 K×K 的 区域使得总的收益最大。 例如，假设石油储量的估计值如下：  
+1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 
+1 8 8 8 8 8 1 1 1 
+1 8 8 8 8 8 1 1 1 
+1 8 8 8 8 8 1 1 1 
+1 1 1 1 8 8 8 1 1 
+1 1 1 1 1 1 8 8 8 
+1 1 1 1 1 1 9 9 9 
+1 1 1 1 1 1 9 9 9 
+如果 K = 2, AoE 公司可以承包的区域的石油储量总和为 100, 如果 K = 3, AoE 公司可以承包的区域的石油储量总和为 208。 AoE 公司雇佣你来写一个程序，帮助计算出他们可以承包的区域的石油储量 之和的最大值。
+
+三个油田共有六种不同的位置分布方式，分别维护四个变量表示左上，右上，左下，右下的最大值，枚举分割点组合答案取最值。
+
+```cpp
+#include<iostream>
+#include<cstdio>
+#include<cstdlib>
+#include<cstring>
+#include<algorithm>
+using namespace std;
+
+#define ll long long
+#define mem(Arr,x) memset(Arr,x,sizeof(Arr))
+
+const int maxN=1510;
+const int inf=2147473647;
+
+int n,m,K;
+int Val[maxN][maxN];
+int A[maxN][maxN],B[maxN][maxN],C[maxN][maxN],D[maxN][maxN];
+
+int Get(int x1,int y1,int x2,int y2);
+
+int main(){
+	//freopen("1.in","r",stdin);
+	scanf("%d%d%d",&n,&m,&K);
+	for (int i=1;i<=n;i++) for (int j=1;j<=m;j++) scanf("%d",&Val[i][j]);
+
+	for (int i=1;i<=n;i++) for (int j=1;j<=m;j++) Val[i][j]+=Val[i][j-1];
+	for (int i=1;i<=n;i++) for (int j=1;j<=m;j++) Val[i][j]+=Val[i-1][j];
+	
+	for (int i=K;i<=n;i++) for (int j=K;j<=m;j++) A[i][j]=max(Get(i-K+1,j-K+1,i,j),max(A[i-1][j],A[i][j-1]));
+	for (int i=K;i<=n;i++) for (int j=m-K+1;j>=1;j--) B[i][j]=max(Get(i-K+1,j,i,j+K-1),max(B[i-1][j],B[i][j+1]));
+	for (int i=n-K+1;i>=K;i--) for (int j=K;j<=m;j++) C[i][j]=max(Get(i,j-K+1,i+K-1,j),max(C[i+1][j],C[i][j-1]));
+	for (int i=n-K+1;i>=1;i--) for (int j=m-K+1;j>=1;j--) D[i][j]=max(Get(i,j,i+K-1,j+K-1),max(D[i+1][j],D[i][j+1]));
+
+	int Ans=0;
+	for (int i=K+1;i+K-1<=n;i++) for (int j=K;j+K<=m;j++) Ans=max(Ans,A[i-1][m]+C[i][j]+D[i][j+1]);
+	for (int i=K;i+K<=n;i++) for (int j=K+1;j+K-1<=m;j++) Ans=max(Ans,A[n][j-1]+B[i][j]+D[i+1][j]);
+	for (int i=K;i+K<=n;i++) for (int j=K;j+K<=m;j++) Ans=max(Ans,A[i][j]+B[i][j+1]+C[i+1][m]);
+	for (int i=K;i+K<=n;i++) for (int j=K;j+K<=m;j++) Ans=max(Ans,A[i][j]+C[i+1][j]+D[1][j+1]);
+
+	for (int i=K+K;i+K<=n;i++) for (int j=K;j<=m;j++) Ans=max(Ans,Get(i-K+1,j-K+1,i,j)+A[i-K][m]+C[i+1][m]);
+	for (int i=K;i<=n;i++) for (int j=K+K;j+K<=m;j++) Ans=max(Ans,Get(i-K+1,j-K+1,i,j)+A[n][j-K]+B[n][j+1]);
+
+	printf("%d\n",Ans);
+
+	return 0;
+}
+
+int Get(int x1,int y1,int x2,int y2){
+	return Val[x2][y2]-Val[x1-1][y2]-Val[x2][y1-1]+Val[x1-1][y1-1];
+}
+```
