@@ -28,7 +28,6 @@ Dancing links
 边分治
 哈密顿回路
 Miller Robin素数测试与Pollcard Rho因数分解
-BSGS
 zkw线段树
 Polya计数
 burnside引理
