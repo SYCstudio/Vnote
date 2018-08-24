@@ -381,3 +381,7 @@ rename  's/^/asdasdasd/' *
 
 ### rar压缩和解压
 `rar x XXX.rar`
+
+### zip压缩和解压
+解压`unzip XXX.zip`  
+压缩`zip -r XXX.zip ./*`
