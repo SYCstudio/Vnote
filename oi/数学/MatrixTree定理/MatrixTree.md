@@ -2,14 +2,14 @@
 ## 定义和定理
 对于一个无向图 $G$ ，它的生成树个数等于其基尔霍夫 $Kirchhoff$ 矩阵任何一个 $N-1$ 阶主子式的行列式的绝对值  
 
-> 所谓的 $N-1$ 阶主子式就是对于一个任意的一个 $r$ ，将矩阵的第 $r$ 行和第 $r$ 列同时删去得到的新矩阵，简记为$M\_{ii}$。
+> 所谓的 $N-1$ 阶主子式就是对于一个任意的一个 $r$ ，将矩阵的第 $r$ 行和第 $r$ 列同时删去得到的新矩阵，简记为$M _ {ii}$。
 
 基尔霍夫矩阵的一种构造方法：  
 $Kirchhoff$ 矩阵 $K$ =度数矩阵 $D$ - 邻接矩阵 $A$
 
 ## 行列式相关内容
 ### 行列式的求法
-$det(K)=\sum\_{P}{(-1)}^{\tau{(P)}}\times{K}\_{1,p1}\times{K}\_{2,p2}\times{K}\_{3,p3}\times\cdots\times{K}\_{N,pN}$，其中$P$为$[1,n]$的任意一个排列，$\tau(P)$表示排列$P$的逆序对数，可以认为是在矩阵的每一行选择一个数使得每一列有且仅选择了一个数。  
+$det(K)=\sum _ {P}{(-1)}^{\tau{(P)}}\times{K} _ {1,p1}\times{K} _  {2,p2}\times{K}  _ {3,p3}\times\cdots\times{K} _ {N,pN}$，其中$P$为$[1,n]$的任意一个排列，$\tau(P)$表示排列$P$的逆序对数，可以认为是在矩阵的每一行选择一个数使得每一列有且仅选择了一个数。  
 这是直接的求法，由于排列一共有$n!$个，所以求解的复杂度为$O(n!n)$，下面由行列式的若干性质可以得到一个消元的解法。
 
 ### 行列式的性质
@@ -18,7 +18,7 @@ $det(K)=\sum\_{P}{(-1)}^{\tau{(P)}}\times{K}\_{1,p1}\times{K}\_{2,p2}\times{K}\_
 
 证明：  
 考虑对于原矩阵 $K$，我们可以得到其行列式的求和式：  
-$det(K)=\sum\_{P}{(-1)}^{\tau{(P)}}\times{K}\_{1,p1}\times{K}\_{2,p2}\times{K}\_{3,p3}\times\cdots\times{K}\_{N,pN}$
+$det(K)=\sum _ {P}{(-1)}^{\tau{(P)}}\times{K} _ {1,p1}\times{K} _ {2,p2}\times{K} _ {3,p3}\times\cdots\times{K} _ {N,pN}$
 若交换某两行的位置后得到了 $K'$ 矩阵，若写出其行列式的求和式，不难发现，如果不看符号位的变化，只看每一个乘积项，那么这两个的矩阵的行列式的求和式是完全相同的。我们把相同的乘积项移到对应的位置，如图示：
 ![MatrixTree-1](_v_images/_matrixtree_1532086713_903091175.png)
 
@@ -41,7 +41,7 @@ $det(K)=\sum\_{P}{(-1)}^{\tau{(P)}}\times{K}\_{1,p1}\times{K}\_{2,p2}\times{K}\_
 
 #### 性质四
 行列式的线性性
-$$\begin{bmatrix} a\_{11} & a\_{12} & \cdots & a\_{1n} \\\\ \vdots & \vdots &  & \vdots \\\\ a\_{i1}+b\_{i1} & a\_{i2}+b\_{i2} & \cdots & a\_{in}+b\_{in} \\\\ \vdots & \vdots &  & \vdots \\\\ a\_{n1} & a\_{n2} & \cdots & a\_{nn} \end{bmatrix} = \begin{bmatrix} a\_{11} & a\_{12} & \cdots & a\_{1n} \\\\ \vdots & \vdots &  & \vdots \\\\ a\_{i1} & a\_{i2} & \cdots & a\_{in} \\\\ \vdots & \vdots &  & \vdots \\\\ a\_{n1} & a\_{n2} & \cdots & a\_{nn} \end{bmatrix} + \begin{bmatrix} a\_{11} & a\_{12} & \cdots & a\_{1n} \\\\ \vdots & \vdots &  & \vdots \\\\ b\_{i1} & b\_{i2} & \cdots & b\_{in} \\\\ \vdots & \vdots &  & \vdots \\\\ a\_{n1} & a\_{n2} & \cdots & a\_{nn} \end{bmatrix}$$
+$$\begin{bmatrix} a _ {11} & a _ {12} & \cdots & a _ {1n} \\\\ \vdots & \vdots &  & \vdots \\\\ a _ {i1}+b _ {i1} & a _ {i2}+b _ {i2} & \cdots & a _ {in}+b _ {in} \\\\ \vdots & \vdots &  & \vdots \\\\ a _ {n1} & a _ {n2} & \cdots & a _ {nn} \end{bmatrix} = \begin{bmatrix} a _ {11} & a _ {12} & \cdots & a _ {1n} \\\\ \vdots & \vdots &  & \vdots \\\\ a _ {i1} & a _ {i2} & \cdots & a _ {in} \\\\ \vdots & \vdots &  & \vdots \\\\ a _ {n1} & a _ {n2} & \cdots & a _ {nn} \end{bmatrix} + \begin{bmatrix} a _ {11} & a _ {12} & \cdots & a _ {1n} \\\\ \vdots & \vdots &  & \vdots \\\\ b _ {i1} & b _ {i2} & \cdots & b _ {in} \\\\ \vdots & \vdots &  & \vdots \\\\ a _ {n1} & a _ {n2} & \cdots & a _ {nn} \end{bmatrix}$$
 
 #### 性质五
 > 如果矩阵有两行成比例，则行列式的值为$0$
@@ -56,7 +56,7 @@ $$\begin{bmatrix} a\_{11} & a\_{12} & \cdots & a\_{1n} \\\\ \vdots & \vdots &  &
 #### 性质七
 > 如果矩阵是上三角或下三角矩阵，行列式等于对角线的乘积
 
-根据计算式，只有当排列$P$满足$P\_i=i$时才能保证每一项都不是$0$，即为对角线
+根据计算式，只有当排列$P$满足$P _ i=i$时才能保证每一项都不是$0$，即为对角线
 
 ### 优化行列式的计算
 那么根据上面的形式，可以采用高斯消元的方法，把矩阵化成上三角形式，这样就可以$O(n^3)$地计算行列式了。
@@ -110,7 +110,7 @@ int Guass()
 边矩阵变成边权和矩阵，度数矩阵变成出边边权之和，然后就可以正常做高斯消元
 
 ### 有向图计数
-边矩阵变成只记出边，度数矩阵变成只记出边个数，然后余子式$M\_{ii}$就是以$i$为根的有向生成树个数。
+边矩阵变成只记出边，度数矩阵变成只记出边个数，然后余子式$M _ {ii}$就是以$i$为根的有向生成树个数。
 
 ## 参考
 https://www.cnblogs.com/zj75211/p/8039443.html  
