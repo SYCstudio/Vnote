@@ -1,0 +1,4 @@
+# Cutting Game
+[POJ2311]
+
+Urej loves to play various types of dull games. He usually asks other people to play with him. He says that playing those games can show his extraordinary wit. Recently Urej takes a great interest in a new game, and Erif Nezorf becomes the victim. To get away from suffering playing such a dull game, Erif Nezorf requests your help. The game uses a rectangular paper that consists of W*H grids. Two players cut the paper into two pieces of rectangular sections in turn. In each turn the player can cut either horizontally or vertically, keeping every grids unbroken. After N turns the paper will be broken into N+1 pieces, and in the later turn the players can choose any piece to cut. If one player cuts out a piece of paper with a single grid, he wins the game. If these two people are both quite clear, you should write a problem to tell whether the one who cut first can win or not. 
