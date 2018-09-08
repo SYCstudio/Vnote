@@ -53,6 +53,9 @@
         },
         {
             "name": "AC自动机"
+        },
+        {
+            "name": "Hash"
         }
     ],
     "version": "1"
