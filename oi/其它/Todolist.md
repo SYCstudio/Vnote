@@ -7,12 +7,10 @@ Meet in the middle
 动态点分治加强
 动态DP
 最小树形图
-各种博弈
 拉格朗日差值
 后缀平衡树
 类欧几里得
 斯坦纳树
-最小割树
 扩展KMP
 ISAP
 笛卡尔树
@@ -24,7 +22,6 @@ min_25筛
 群论，置换群
 可持久化平衡树
 Dancing links
-可持久化并查集
 边分治
 哈密顿回路
 Miller Robin素数测试与Pollcard Rho因数分解
@@ -33,7 +30,5 @@ Polya计数
 burnside引理
 线段树优化Dij
 凸优化二分（IOI2012论文）(wps二分)
-线段树分治
-二进制分组
 并查集重构树
 猫树http://immortalco.blog.uoj.ac/blog/2102
