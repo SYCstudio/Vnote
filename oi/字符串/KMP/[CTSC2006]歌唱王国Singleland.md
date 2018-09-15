@@ -38,8 +38,8 @@ $$ \lbrace 空串 \rbrace \bigcup \lbrace a|a=p+c,c \in [1,n],p \in N \rbrace=N 
 第一个方程的意思是，对于每一个原本不包含$s$作为子串的字符串，在它的后面增加一个数字，会有两种情况，即要么依然不包含$s$作为子串，要么包含且仅包含一个。  
 第二个方程的意思是，对于每一个原本不包含$s$作为子串的字符串，在它的后面增加字符串$s$，还是有两种情况，一种是只包含一个$s$，另一种是包含两个$s$且这两个$s$重叠，既然重叠那么就可以用集合$Y$加上一个$P$中的元素来构造。
 
-同时，我们也可以用$Y$得到答案的表达式：$Ans=\sum\_{a \in Y} \frac{|a|}{n^{|a|}}$。设$F(A)=\sum\_{a \in A} \frac{|a|}{n^{|a|}}$  
-但是直接求$F$并不好求，根据**概率母函数**的定义，我们设$G(A,z)=\sum\_{a \in A} (\frac{z}{|a|})^{|a|}$，$G(A,z)$对$z$求导得到$G'(A,z)=\sum\_{a \in A} (\frac{1}{n})^{|a|}|a|z^{|a|-1}$，即$F(Y)=G'(Y,1)$。  
+同时，我们也可以用$Y$得到答案的表达式：$Ans=\sum _ {a \in Y} \frac{|a|}{n^{|a|}}$。设$F(A)=\sum _ {a \in A} \frac{|a|}{n^{|a|}}$  
+但是直接求$F$并不好求，根据**概率母函数**的定义，我们设$G(A,z)=\sum _ {a \in A} (\frac{z}{|a|})^{|a|}$，$G(A,z)$对$z$求导得到$G'(A,z)=\sum _ {a \in A} (\frac{1}{n})^{|a|}|a|z^{|a|-1}$，即$F(Y)=G'(Y,1)$。  
 那么现在的问题就是要求出$G(Y,1)$，然后通过求导得到$F(Y)$。把上面列出的两个关于数字串集合的方程带入到函数$G$中，得到。
 
 $$G(\lbrace 空串 \rbrace \bigcup \lbrace a|a=p+c,c \in [1,n],p \in N \rbrace,z)=G(N \bigcup Y,z) \\\\ G(\lbrace a|a=p+s,p \in N \rbrace,z)=G(Y \bigcup \lbrace a|a=q+p,q \in Y ,p \in P\rbrace)$$
@@ -55,19 +55,19 @@ $$1+z \times G(N,z)=G(N,z)+G(Y,z) \\\\ G(N,z) \times (\frac{z}{n})^{|s|}=G(Y,z)+
 $$G(Y,z)=\frac{(\frac{z}{n})^{|s|}}{(\frac{z}{n})^{|s|}+G(P,z)-z \times G(P,z)+1-z}$$
 
 把$G(P,z)$按照定义展开，得到  
-$$G(Y,z)=\frac{(\frac{z}{n})^{|s|}}{(\frac{z}{n})^{|s|}+\sum\_{a \in P}\frac{1}{n^{|a|}} z^{|a|} - z \times \sum\_{a \in P}\frac{1}{n^{|a|}} z^{|a|} +1 -z  } \\\\ =\frac{(\frac{z}{n})^{|s|}}{(\frac{z}{n})^{|s|}+\sum\_{a \in P}\frac{1}{n^{|a|}} z^{|a|} - \sum\_{a \in P}\frac{1}{n^{|a|}} z^{|a|+1} +1 -z  }$$
+$$G(Y,z)=\frac{(\frac{z}{n})^{|s|}}{(\frac{z}{n})^{|s|}+\sum _ {a \in P}\frac{1}{n^{|a|}} z^{|a|} - z \times \sum _ {a \in P}\frac{1}{n^{|a|}} z^{|a|} +1 -z  } \\\\ =\frac{(\frac{z}{n})^{|s|}}{(\frac{z}{n})^{|s|}+\sum _ {a \in P}\frac{1}{n^{|a|}} z^{|a|} - \sum _ {a \in P}\frac{1}{n^{|a|}} z^{|a|+1} +1 -z  }$$
 
 设$h(z)$为分子，$p(z)$为分母。  
-$$h(z)=(\frac{z}{n})^{|s|} \\\\ p(z)=(\frac{z}{n})^{|s|}+\sum\_{a \in P}\frac{1}{n^{|a|}} z^{|a|} - \sum\_{a \in P}\frac{1}{n^{|a|}} z^{|a|+1} +1 -z  $$  
+$$h(z)=(\frac{z}{n})^{|s|} \\\\ p(z)=(\frac{z}{n})^{|s|}+\sum _ {a \in P}\frac{1}{n^{|a|}} z^{|a|} - \sum _ {a \in P}\frac{1}{n^{|a|}} z^{|a|+1} +1 -z  $$  
 
 分别求导得到  
-$$h'(z) =\frac{|s|z^{|s|-1}}{n^{|s|}} \\\\ p'(z) =\frac{z^{|s|}}{n^{|s|}}+\sum\_{a \in P} \frac{|a|z^{|a|-1}}{n^{|a|}}-\sum\_{a \in P} \frac{(|a|+1)z^{|a|}}{n^{|a|}}+0-1$$
+$$h'(z) =\frac{|s|z^{|s|-1}}{n^{|s|}} \\\\ p'(z) =\frac{z^{|s|}}{n^{|s|}}+\sum _ {a \in P} \frac{|a|z^{|a|-1}}{n^{|a|}}-\sum _ {a \in P} \frac{(|a|+1)z^{|a|}}{n^{|a|}}+0-1$$
 
 将$z=1$带入，得到  
-$$h(1)=p(1)=\frac{1}{n^{|s|}} \\\\ h'(1)=\frac{|s|}{n^{|s|}} \\\\ p'(1)=\frac{|s|}{n^{|s|}}+\sum\_{a \in P} \frac{|a|}{n^{|a|}}-\sum\_{a \in P}\frac{|a|+1}{n^{|a|}}-1 \\\\ $$
+$$h(1)=p(1)=\frac{1}{n^{|s|}} \\\\ h'(1)=\frac{|s|}{n^{|s|}} \\\\ p'(1)=\frac{|s|}{n^{|s|}}+\sum _ {a \in P} \frac{|a|}{n^{|a|}}-\sum _ {a \in P}\frac{|a|+1}{n^{|a|}}-1 \\\\ $$
 
 根据导数除法的性质，$G'(Y,1)=\frac{h'(1)p(1)-p'(1)h(1)}{p^2(1)}$，得到  
-$$G'(Y,1)=\frac{\frac{|s|}{n^{|s|}}\times \frac{1}{n^{|s|}}-\frac{1}{n^{|s|}}(\frac{|s|}{n^{|s|}}-\sum\_{a \in P} \frac{1}{n^{|a|}} -1)  }  {  \frac{1}{n^{2|s|}}  } \\\\ =\sum\_{a \in P}n^{|s|-|a|}+n^{|s|}$$
+$$G'(Y,1)=\frac{\frac{|s|}{n^{|s|}}\times \frac{1}{n^{|s|}}-\frac{1}{n^{|s|}}(\frac{|s|}{n^{|s|}}-\sum _ {a \in P} \frac{1}{n^{|a|}} -1)  }  {  \frac{1}{n^{2|s|}}  } \\\\ =\sum _ {a \in P}n^{|s|-|a|}+n^{|s|}$$
 
 那么$|s|-|a|$的意义是什么呢？就是所有相同的前后缀的长度，那么用$KMP$统计一遍就好。
 

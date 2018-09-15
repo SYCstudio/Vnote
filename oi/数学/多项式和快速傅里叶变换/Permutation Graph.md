@@ -6,7 +6,7 @@ For example, if the permutation is {2, 3, 1, 4}, then 1 and 2 are connected and 
 Edward lost his permutation, but he does know the connected components of the corresponding graph. He wants to know how many permutations will result in the same connected components.  
 Note that two vertices u, v belong to the same connected component if there exists a sequence of vertices starting with u and ending with v such that every two subsequent vertices in the sequence are connected by an edge.
 
-若对于一个排列，若有$i<j$且$a\_i > a\_j$，则连接$a\_i,a\_j$。这样可以构成若干连通块。现在给出连通块的个数，和各个连通块内分别有哪些数。求有多少可行的排列数。
+若对于一个排列，若有$i<j$且$a _ i > a _ j$，则连接$a _ i,a _ j$。这样可以构成若干连通块。现在给出连通块的个数，和各个连通块内分别有哪些数。求有多少可行的排列数。
 
 首先要知道一个题目的性质，就是一个连通块内的数值一定是连续的，因为假设中间断开了一个，那么这个如果在前面，比它小的在它后面就可以形成一对逆序；在后面，比它大的也可以形成逆序。另外，既然确定了每一个连通块都是连续的，那么连通块在排列中的顺序也是确定的，因为前一个连通快的最大值一定小于后一个连通块的最小值。那么这样一来，答案就只与每一个连通块的长度有关了。  
 怎么算答案呢？设$F[i]$表示长度为$i$的连通块的方案数。考虑用总方案-不合法的方案的方法，则有$F[i]=i!-j! \times F[i-j]$，意义是前$j$个数的任意排列拼接上后$i-j$个数的不合法的方案，一定是不合法的。而这样保证了左边全部都是全互不连通的单块，且左右不连通，这样就可以不重不漏了。  

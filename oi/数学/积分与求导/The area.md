@@ -7,7 +7,7 @@ Note: The point P1 in the picture is the vertex of the parabola.
 
 求出抛物线和一次函数的解析式后，相减得到一条新的抛物线，即求这条抛物线与$x$轴围成的面积大小。  
 设新抛物线解析式为$y=ax^2+bx+c$，有  
-$$\int\_l^r ax^2+bx+c \\\\ =a\int\_l^r x^2dx+b\int\_l^r xdx+c\int\_l^r dx \\\\ =\frac{a(r^3-l^3)}{3}+\frac{b(r^2-l^2)}{2}+c(r-l)$$
+$$\int _ l^r ax^2+bx+c \\\\ =a\int _ l^r x^2dx+b\int _ l^r xdx+c\int _ l^r dx \\\\ =\frac{a(r^3-l^3)}{3}+\frac{b(r^2-l^2)}{2}+c(r-l)$$
 
 ```cpp
 #include<iostream>

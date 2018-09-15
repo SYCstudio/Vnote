@@ -6,7 +6,7 @@ What is the minimum number of cells with value 1 you can get after applying some
 
 $n$只有$20$，所以可以考虑状压。  
 当行的变换方式确定的时候，每一个列的答案就是$0$和$1$中出现次数较小的那个，可以设$b[i]$表示$i$的答案，这个可以$O(n)$地预处理出来。又因为列数值相同的答案其实是一样的，所以可以合并到一起来做，记$a[i]$为状态$i$的出现次数  
-设行变换为$i$的答案为$f[i]$，那么有转移式$f[k]=\sum\_{i \wedge k==j}a[i] b[j]$，根据异或的性质$i \wedge k==j$等价于$i \wedge j==k$，所以有$f[k]=\sum\_{i \wedge j==k}a[i]b[j]$，即是一个异或卷积的形式，用$FWT$优化。
+设行变换为$i$的答案为$f[i]$，那么有转移式$f[k]=\sum _ {i \wedge k==j}a[i] b[j]$，根据异或的性质$i \wedge k==j$等价于$i \wedge j==k$，所以有$f[k]=\sum _ {i \wedge j==k}a[i]b[j]$，即是一个异或卷积的形式，用$FWT$优化。
 
 ```cpp
 #include<iostream>

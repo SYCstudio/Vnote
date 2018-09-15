@@ -7,10 +7,10 @@ Recently the company Max Traffic has decided to take control over some cables so
 To put its plans into practice the company needs to buy corresponding cables from their current owners. Each cable has some cost. Since the company's main business is not spying, but providing internet connection to home users, its management wants to make the operation a good investment. So it wants to buy such a set of cables, that cables mean cost} is minimal possible.  
 That is, if the company buys k cables of the total cost c, it wants to minimize the value of c/k.
 
-题意：给出一张无向图，每一条边有一定的费用$w[i]$，求一个割使得$1$和$n$不连通并且$\frac{\sum x\_i \times w\_i}{\sum x\_i}$最小。
+题意：给出一张无向图，每一条边有一定的费用$w[i]$，求一个割使得$1$和$n$不连通并且$\frac{\sum x _ i \times w _ i}{\sum x _ i}$最小。
 
 分数规划+最小割。  
-有$\frac{\sum x\_i \times w\_i}{\sum x\_i}=Ans$，则变形后得到$\sum x\_i \times (w\_i+Ans)$，若这个式子大于$0$，则说明答案还可以更小，否则，答案更大。  
+有$\frac{\sum x _ i \times w _ i}{\sum x _ i}=Ans$，则变形后得到$\sum x _ i \times (w _ i+Ans)$，若这个式子大于$0$，则说明答案还可以更小，否则，答案更大。  
 所以二分答案，然后$Dinic$求解最小割。
 
 ```cpp

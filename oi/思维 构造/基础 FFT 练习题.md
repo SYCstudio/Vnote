@@ -2,7 +2,7 @@
 [LOJ6487]
 
 给定两个长度都为$n$的正整数数组a​1​​,a​2​​,...,a​n​​,b​1​​,b​2​​,...,b​n​​，求
-$$\sum\_{i=1}^{n} \sum\_{j=1}^{n} \lfloor \sqrt{|a\_{i}-b\_{j}|} \rfloor$$
+$$\sum _ {i=1}^{n} \sum _ {j=1}^{n} \lfloor \sqrt{|a _ {i}-b _ {j}|} \rfloor$$
 
 其中 $\lfloor \rfloor$ 表示下取整。
 

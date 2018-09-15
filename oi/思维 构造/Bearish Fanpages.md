@@ -11,7 +11,7 @@ Limak and Radewoosh ask you for help. Initially, fanpage i follows fanpage fi. Y
     2 i — print the total income of the i-th company.
     3 — print two integers: the smallest income of one company and the biggest income of one company. 
 
-给出$n$个点，每一个点有一条出边到达另一个点。定义每一个点有一个权值$B\_i$，与$i$点距离不超过$1$的点有$D\_i$个，定义$E\_i=\lfloor \frac{B\_i}{D\_i} \rfloor$，$C\_i=B\_i-E\_i \times D\_i+\sum E\_{P\_i}$，现在要求支持：1.更改某一个点的出边;2.询问某一个点的$C\_i$值，询问全局$C\_i$最小值和最大值。
+给出$n$个点，每一个点有一条出边到达另一个点。定义每一个点有一个权值$B _ i$，与$i$点距离不超过$1$的点有$D _ i$个，定义$E _ i=\lfloor \frac{B _ i}{D _ i} \rfloor$，$C _ i=B _ i-E _ i \times D _ i+\sum E _ {P _ i}$，现在要求支持：1.更改某一个点的出边;2.询问某一个点的$C _ i$值，询问全局$C _ i$最小值和最大值。
 
 发现修改的时候，会影响其父亲的$D$和$E$，其父亲的$E$的改变又会更改相邻的所有点的$C$，那么除了儿子的$C$不好直接更改外，其它的信息都是可以$O(1)$修改的。那么为了维护儿子的$C$，对于每一个点维护一个其儿子的$C$的集合，修改的时候直接打上全部加的标记，而对于边的修改则把标记继承过来。再在全局维护两个集合方便求最大值和最小值。
 

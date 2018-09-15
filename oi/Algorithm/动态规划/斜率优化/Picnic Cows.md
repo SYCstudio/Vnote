@@ -8,9 +8,9 @@ For example, Carolina has 7 cows to picnic and their Moo~ are ‘8 5 6 2 1 7 6�
 题意：给出数组$A[i]$，求把这$n$个数分成若干组，每组至少$K$个元素，使得每一个数减去每组中最小值之和最小。
 
 将数字$V$排序后，设前缀和为$S$，则有转移方程  
-$$F\_i=min(F\_j+S\_i-S\_j-V\_{j+1} \times (i-j)) \ j \in [1,i-K]$$  
+$$F _ i=min(F _ j+S _ i-S _ j-V _ {j+1} \times (i-j)) \ j \in [1,i-K]$$  
 变形后得到  
-$$F\_j-S\_j+j \times V\_{j+1}=i \times V\_{j+1}-S\_j+F\_i$$  
+$$F _ j-S _ j+j \times V _ {j+1}=i \times V _ {j+1}-S _ j+F _ i$$  
 然后斜率优化之。
 
 有两个需要注意的地方，一是需要先算出$[K,K \times 2-1]$的值，二是因为数有重复的，所以不能用除法的形式来求斜率，而应该移项转成乘法形式，而由于是不等式，所以负数乘过去需要变号。

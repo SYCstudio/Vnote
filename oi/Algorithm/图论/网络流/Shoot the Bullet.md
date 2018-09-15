@@ -6,7 +6,7 @@ Gensokyo is a world which exists quietly beside ours, separated by a mystical bo
 During the coming n days, Aya is planning to take many photos of m cute girls living in Gensokyo to write Bunbunmaru News daily and record at least Gx photos of girl x in total in the Bunkachou. At the k-th day, there are Ck targets, Tk1, Tk2, ..., TkCk. The number of photos of target Tki that Aya takes should be in range [Lki, Rki], if less, Aya cannot write an interesting article, if more, the girl will become angry and use her last spell card to attack Aya. What's more, Aya cannot take more than Dk photos at the k-th day. Under these constraints, the more photos, the better.  
 Aya is not good at solving this complex problem. So she comes to you, an earthling, for help.
 
-$n$天，每天最多拍$D\_k$张，每天可以有$C\_k$个人可以选择，每一个人可以选择拍$[l,r]$张。每个人每一天加起来不能低于一个数值，求最多能拍多少张照片。
+$n$天，每天最多拍$D _ k$张，每天可以有$C _ k$个人可以选择，每一个人可以选择拍$[l,r]$张。每个人每一天加起来不能低于一个数值，求最多能拍多少张照片。
 
 对应建立二分图模型，由于是有源汇上下界最大流模型，转化为无源无汇网络流，求可行流，若可行，然后再增广求最大流。
 

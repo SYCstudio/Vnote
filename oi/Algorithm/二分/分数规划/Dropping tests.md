@@ -9,9 +9,9 @@ Given your test scores and a positive integer k, determine how high you can make
 
 Suppose you take 3 tests with scores of 5/5, 0/1, and 2/6. Without dropping any tests, your cumulative average is ![](https://odzkskevi.qnssl.com/1d5abb1f890636d0a47bac88f3b1436b?v=1528159719). However, if you drop the third test, your cumulative average becomes ![](https://odzkskevi.qnssl.com/f70df6d58de94d28226a4ac887bd9425?v=1528159719).
 
-题意：给出数组$A[i]$和$B[i]$，求删掉不超过$K$个数使得$\frac{\sum^{n}\_{i=1} A\_i}{\sum^{n}\_{i=1} B\_i}$最大
+题意：给出数组$A[i]$和$B[i]$，求删掉不超过$K$个数使得$\frac{\sum^{n} _ {i=1} A _ i}{\sum^{n} _ {i=1} B _ i}$最大
 
-分数规划，设答案为$L$，则要求$\frac{\sum^{n}\_{i=1} A\_i}{\sum^{n}\_{i=1} B\_i}=L$，移项后得到$\sum\_{i=1}^n A[i]-L \times \sum\_{i=1}^n B[i]$，这个式子若小于$0$，则说明$L$可以更大，所以二分这个$L$，算出数值与$0$进行比较
+分数规划，设答案为$L$，则要求$\frac{\sum^{n} _ {i=1} A _ i}{\sum^{n} _ {i=1} B _ i}=L$，移项后得到$\sum _ {i=1}^n A[i]-L \times \sum _ {i=1}^n B[i]$，这个式子若小于$0$，则说明$L$可以更大，所以二分这个$L$，算出数值与$0$进行比较
 
 > 目前在POJ上WA，其它OJ上AC，不知原因
 
