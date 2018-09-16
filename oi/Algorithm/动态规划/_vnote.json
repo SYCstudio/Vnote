@@ -56,6 +56,22 @@
             "created_time": "2018-09-15T08:55:55Z",
             "modified_time": "2018-09-15T08:55:55Z",
             "name": "[HNOI2010]合唱队.md"
+        },
+        {
+            "attachment_folder": "",
+            "attachments": [
+            ],
+            "created_time": "2018-09-16T07:25:35Z",
+            "modified_time": "2018-09-16T07:29:50Z",
+            "name": "[SCOI2007]压缩.md"
+        },
+        {
+            "attachment_folder": "",
+            "attachments": [
+            ],
+            "created_time": "2018-09-16T07:47:49Z",
+            "modified_time": "2018-09-16T07:47:49Z",
+            "name": "[SCOI2003]字符串折叠.md"
         }
     ],
     "sub_directories": [
