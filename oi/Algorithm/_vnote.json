@@ -22,10 +22,13 @@
             "name": "搜索"
         },
         {
+            "name": "meet in the middle"
+        },
+        {
             "name": "二分"
         },
         {
-            "name": "meet in the middle"
+            "name": "三分"
         }
     ],
     "version": "1"
