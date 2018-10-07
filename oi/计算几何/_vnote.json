@@ -13,6 +13,9 @@
     "sub_directories": [
         {
             "name": "凸包"
+        },
+        {
+            "name": "多边形"
         }
     ],
     "version": "1"
