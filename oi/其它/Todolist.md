@@ -27,3 +27,4 @@ Havel-Hakimi定理
 BFPRT
 生成树：Boruvka
 配对堆，斐波那契堆
+竞赛图
