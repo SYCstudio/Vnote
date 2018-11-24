@@ -31,7 +31,7 @@
             "name": "笛卡尔树 Treap"
         },
         {
-            "name": "可并堆"
+            "name": "堆"
         }
     ],
     "version": "1"
