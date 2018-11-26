@@ -7,7 +7,9 @@
             ],
             "created_time": "2018-09-16T12:34:24Z",
             "modified_time": "2018-09-16T12:34:24Z",
-            "name": "[SCOI2013]数数.md"
+            "name": "[SCOI2013]数数.md",
+            "tags": [
+            ]
         },
         {
             "attachment_folder": "",
@@ -15,7 +17,9 @@
             ],
             "created_time": "2018-09-16T16:05:57Z",
             "modified_time": "2018-09-16T16:05:57Z",
-            "name": "[SDOI2013]淘金.md"
+            "name": "[SDOI2013]淘金.md",
+            "tags": [
+            ]
         },
         {
             "attachment_folder": "",
@@ -23,7 +27,9 @@
             ],
             "created_time": "2018-09-18T07:19:36Z",
             "modified_time": "2018-09-18T07:19:36Z",
-            "name": "[SDOI2016]储能表.md"
+            "name": "[SDOI2016]储能表.md",
+            "tags": [
+            ]
         },
         {
             "attachment_folder": "",
@@ -31,7 +37,9 @@
             ],
             "created_time": "2018-09-18T09:41:55Z",
             "modified_time": "2018-09-18T09:41:55Z",
-            "name": "[HNOI2002]Kathy函数.md"
+            "name": "[HNOI2002]Kathy函数.md",
+            "tags": [
+            ]
         },
         {
             "attachment_folder": "",
@@ -39,7 +47,9 @@
             ],
             "created_time": "2018-09-19T08:20:57Z",
             "modified_time": "2018-09-19T08:20:57Z",
-            "name": "[SCOI2014]方伯伯的商场之旅.md"
+            "name": "[SCOI2014]方伯伯的商场之旅.md",
+            "tags": [
+            ]
         },
         {
             "attachment_folder": "",
@@ -47,7 +57,9 @@
             ],
             "created_time": "2018-10-09T11:57:51Z",
             "modified_time": "2018-10-09T11:57:51Z",
-            "name": "[HNOI2012]与非.md"
+            "name": "[HNOI2012]与非.md",
+            "tags": [
+            ]
         },
         {
             "attachment_folder": "",
@@ -55,7 +67,19 @@
             ],
             "created_time": "2018-10-17T13:14:34Z",
             "modified_time": "2018-10-17T13:14:34Z",
-            "name": "[SCOI2012]Blinker的仰慕者.md"
+            "name": "[SCOI2012]Blinker的仰慕者.md",
+            "tags": [
+            ]
+        },
+        {
+            "attachment_folder": "",
+            "attachments": [
+            ],
+            "created_time": "2018-11-26T13:00:30Z",
+            "modified_time": "2018-11-26T13:02:20Z",
+            "name": "[CQOI2013]二进制A+B.md",
+            "tags": [
+            ]
         }
     ],
     "sub_directories": [
