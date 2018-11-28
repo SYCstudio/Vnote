@@ -7,7 +7,9 @@
             ],
             "created_time": "2018-08-14T09:07:45Z",
             "modified_time": "2018-08-14T09:07:45Z",
-            "name": "数论知识总表.md"
+            "name": "数论知识总表.md",
+            "tags": [
+            ]
         },
         {
             "attachment_folder": "",
@@ -15,7 +17,9 @@
             ],
             "created_time": "2018-10-03T14:43:02Z",
             "modified_time": "2018-10-03T14:43:02Z",
-            "name": "[HAOI2012]外星人.md"
+            "name": "[HAOI2012]外星人.md",
+            "tags": [
+            ]
         },
         {
             "attachment_folder": "",
@@ -23,7 +27,9 @@
             ],
             "created_time": "2018-10-05T14:18:56Z",
             "modified_time": "2018-10-05T14:18:56Z",
-            "name": "[AHOI2012]树屋阶梯.md"
+            "name": "[AHOI2012]树屋阶梯.md",
+            "tags": [
+            ]
         },
         {
             "attachment_folder": "",
@@ -31,7 +37,9 @@
             ],
             "created_time": "2018-10-08T12:18:33Z",
             "modified_time": "2018-10-08T12:18:33Z",
-            "name": "[CQOI2012]组装.md"
+            "name": "[CQOI2012]组装.md",
+            "tags": [
+            ]
         },
         {
             "attachment_folder": "",
@@ -39,7 +47,9 @@
             ],
             "created_time": "2018-10-14T14:07:30Z",
             "modified_time": "2018-10-14T14:07:30Z",
-            "name": "[BJOI2012]算不出的等式.md"
+            "name": "[BJOI2012]算不出的等式.md",
+            "tags": [
+            ]
         },
         {
             "attachment_folder": "",
@@ -47,7 +57,9 @@
             ],
             "created_time": "2018-10-15T14:12:26Z",
             "modified_time": "2018-10-15T14:12:26Z",
-            "name": "[HEOI2012]Akai 的数学作业.md"
+            "name": "[HEOI2012]Akai 的数学作业.md",
+            "tags": [
+            ]
         },
         {
             "attachment_folder": "",
@@ -55,7 +67,9 @@
             ],
             "created_time": "2018-10-26T10:53:27Z",
             "modified_time": "2018-10-26T10:53:27Z",
-            "name": "[SDOI2013]方程.md"
+            "name": "[SDOI2013]方程.md",
+            "tags": [
+            ]
         }
     ],
     "sub_directories": [
@@ -72,7 +86,7 @@
             "name": "莫比乌斯反演"
         },
         {
-            "name": "组合计数"
+            "name": "组合容斥计数"
         },
         {
             "name": "FWT快速沃尔什变换"
