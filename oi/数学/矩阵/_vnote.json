@@ -14,7 +14,7 @@
     ],
     "sub_directories": [
         {
-            "name": "高斯消元"
+            "name": "高斯消元和线性基"
         },
         {
             "name": "矩阵树定理"

@@ -29,3 +29,4 @@ BFPRT
 配对堆，斐波那契堆
 竞赛图
 单位根反演
+排序不等式Rearrangement inequality https://www.cnblogs.com/Paul-Guderian/p/10022298.html
