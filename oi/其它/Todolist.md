@@ -6,10 +6,7 @@
 后缀平衡树
 类欧几里得
 扩展KMP
-ISAP
-插头DP
 四边形不等式
-min_25筛
 单纯型
 群论，置换群
 Dancing links
