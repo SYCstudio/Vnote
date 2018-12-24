@@ -1,0 +1,21 @@
+{
+    "brand": "vnote online",
+    "title": "Viki at sycstudio.com",
+    "favicon": "https://github.com/tamlok/viki/raw/master/resources/viki.ico",
+    "footer": "",
+    "show_suffix": false,
+    "load_before_search": true,
+    "fuzzy_search": false,
+    "markdown":
+    {
+        "html": true,
+        "breaks": false,
+        "linkify": false,
+        "typographer": false,
+        "lang_prefix": "lang-",
+        "image_caption": true,
+        "plantuml_server": "http://www.plantuml.com/plantuml",
+        "plantuml_format": "svg",
+        "code_block_line_number": true
+    }
+}

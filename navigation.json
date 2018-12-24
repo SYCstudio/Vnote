@@ -1,0 +1,29 @@
+{
+    "navigation":
+    [
+        {
+            "text": "Home",
+            "target": "index.md",
+            "toc": false
+        },
+        {
+            "text": "OI",
+            "target": "oi/_vnote.json",
+            "navi": true,
+            "navi_index": "oi/welcome.md"
+        },
+        {
+            "text":"Back to sycstudio.com",
+            "target":"http://sycstudio.com",
+            "toc":false
+        }
+    ],
+    "actions":
+    [
+        {
+            "text": "Viki",
+            "icon": "css/viki_white.svg",
+            "target": "https://tamlok.github.io/viki/"
+        }
+    ]
+}
