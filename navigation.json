@@ -11,11 +11,6 @@
             "target": "oi/_vnote.json",
             "navi": true,
             "navi_index": "oi/welcome.md"
-        },
-        {
-            "text":"Back to sycstudio.com",
-            "target":"http://sycstudio.com",
-            "toc":false
         }
     ],
     "actions":
