@@ -1,7 +1,7 @@
 {
     "brand": "vnote online",
     "title": "Viki at sycstudio.com",
-    "favicon": "https://github.com/tamlok/viki/raw/master/resources/viki.ico",
+    "favicon": "logo.png",
     "footer": "",
     "show_suffix": false,
     "load_before_search": true,
