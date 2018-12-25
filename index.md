@@ -1,5 +1,7 @@
 # Welcome
 
+![logo](logo.png)
+
 [Github](https://github.com/SYCstudio) | [Cnblogs](https://sycstudio.cnblogs.com)  
 [Luogu](https://www.luogu.org/space/show?uid=21377) | [BZOJ](https://www.lydsy.com/JudgeOnline/userinfo.php?user=SYCstudio) | [UOJ](http://uoj.ac/user/profile/SYCstudio) | [LOJ](https://loj.ac/user/1480) | [Codeforces](http://codeforces.com/profile/SYCstudio) | [Atcoder](https://atcoder.jp/users/SYCstudio)  
 `1726016246` | `sycstudio@qq.com` | `sycstudiosyc@gmail.com`
