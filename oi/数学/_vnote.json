@@ -100,6 +100,9 @@
         },
         {
             "name": "min_25筛"
+        },
+        {
+            "name": "Miller-Rabin,Pollar-Rho"
         }
     ],
     "version": "1"
