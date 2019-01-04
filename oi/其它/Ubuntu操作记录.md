@@ -385,3 +385,6 @@ rename  's/^/asdasdasd/' *
 ### zip压缩和解压
 解压`unzip XXX.zip`  
 压缩`zip -r XXX.zip ./*`
+
+## Docker
+删除所有未在使用的桥 docker network prune
