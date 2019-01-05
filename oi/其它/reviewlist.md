@@ -1,6 +1,7 @@
 # reviewlist
 复习清单
 
+[PKUWC2018]狼人杀
 [PKUWC2018]随机算法
 [PKUWC2018]Slay the Spire
 [PKUWC2018]随机游走
