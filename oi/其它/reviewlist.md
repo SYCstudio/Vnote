@@ -1,6 +1,7 @@
 # reviewlist
 复习清单
 
+[CF741E]Arpa’s abnormal DNA and Mehrdad’s deep interest
 [BZOJ4180]字符串计数
 [HAOI2017]字符串
 [Luogu4707]重返现世
