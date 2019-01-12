@@ -1,6 +1,9 @@
 # reviewlist
 复习清单
 
+[CQOI2014]危桥
+[CF235C]Cyclical Quest
+[CF700E]Cool Slogans
 [BZOJ1396]识别子串
 [LOJ6071]「2017 山东一轮集训 Day5」字符串
 [LOJ6070]「2017 山东一轮集训 Day4」基因
