@@ -1,6 +1,7 @@
 # reviewlist
 复习清单
 
+[SDOI2014]LIS
 [CQOI2014]危桥
 [CF235C]Cyclical Quest
 [CF700E]Cool Slogans
