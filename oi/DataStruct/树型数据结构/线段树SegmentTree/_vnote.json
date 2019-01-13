@@ -211,6 +211,9 @@
         }
     ],
     "sub_directories": [
+        {
+            "name": "线段树合并"
+        }
     ],
     "version": "1"
 }

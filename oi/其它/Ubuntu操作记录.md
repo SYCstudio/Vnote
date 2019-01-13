@@ -338,7 +338,7 @@ cd /var/cache/apt/archives
 sudo rm -rf partial
 ```
 
-## Ubuntu系统的一些使用方式
+## 常见操作
 ### 文件名修改
 #### 运用正则表达式统一在文件头部添加上 asdasdasd
 ```plain
