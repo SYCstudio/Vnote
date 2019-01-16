@@ -1,6 +1,7 @@
 # reviewlist
 复习清单
 
+[BZOJ3938][集训队互测2015]Robot
 [POI2010]Bridges
 [BZOJ2406]矩阵
 [BZOJ3698]XWW的难题
