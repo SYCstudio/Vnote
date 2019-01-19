@@ -1,6 +1,9 @@
 # reviewlist
 复习清单
 
+[JSOI2013]吃货jyy
+[JSOI2013]侦探jyy
+[IOI2008]Island
 [BZOJ3159]决战
 [HNOI2015]落忆枫音
 [HNOI2015]亚瑟王
