@@ -1,6 +1,11 @@
 # reviewlist
 复习清单
 
+[BZOJ4695]最假女选手
+[NOI2010]航空管制
+[BZOJ4764]弹飞大爷
+[POI2015]WYC
+[BZOJ4767]两双手
 [JSOI2013]吃货jyy
 [JSOI2013]侦探jyy
 [IOI2008]Island
