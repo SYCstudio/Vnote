@@ -1,6 +1,8 @@
 # reviewlist
 复习清单
 
+[IOI2018]狼人
+[IOI2018]组合动作
 [BZOJ4977][LYDSY1708月赛]跳伞求生
 [NWERC2017]Factor-Free Tree
 [BZOJ4482][JSOI2015]套娃
