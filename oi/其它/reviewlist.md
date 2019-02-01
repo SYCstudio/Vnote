@@ -1,6 +1,7 @@
 # reviewlist
 复习清单
 
+[COCI2012]Inspector
 [BZOJ4401]块的计数
 [BZOJ3591]最长上升子序列
 [FJOI2016]神秘数/[BZOJ4299]Codechef FRBSUM
