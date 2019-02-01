@@ -1,6 +1,8 @@
 # reviewlist
 复习清单
 
+[FJOI2016]神秘数/[BZOJ4299]Codechef FRBSUM
+[IOI2018]会议
 [WC2019]远古计算机
 [WC2018]州区划分
 [IOI2018]排座位
