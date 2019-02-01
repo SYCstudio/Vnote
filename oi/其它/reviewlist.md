@@ -1,6 +1,8 @@
 # reviewlist
 复习清单
 
+[BZOJ4401]块的计数
+[BZOJ3591]最长上升子序列
 [FJOI2016]神秘数/[BZOJ4299]Codechef FRBSUM
 [IOI2018]会议
 [WC2019]远古计算机
