@@ -1,6 +1,10 @@
 # reviewlist
 复习清单
 
+[BZOJ5312]冒险
+[BZOJ2040][2009国家集训队]拯救Protoss的故乡
+[BZOJ4318]OSU!
+[HNOI2007]梦幻岛宝珠
 [BZOJ3091]城市旅行
 [WC2007]疯狂赛车
 [COCI2012]Inspector
