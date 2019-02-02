@@ -1,6 +1,8 @@
 # reviewlist
 复习清单
 
+[BZOJ3091]城市旅行
+[WC2007]疯狂赛车
 [COCI2012]Inspector
 [BZOJ4401]块的计数
 [BZOJ3591]最长上升子序列
