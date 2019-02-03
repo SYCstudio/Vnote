@@ -1,6 +1,7 @@
 # reviewlist
 复习清单
 
+[CEOI2017]Mousetrap
 [BZOJ5312]冒险
 [BZOJ2040][2009国家集训队]拯救Protoss的故乡
 [BZOJ4318]OSU!
