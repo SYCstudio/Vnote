@@ -7,7 +7,9 @@
             ],
             "created_time": "2018-09-21T09:35:35Z",
             "modified_time": "2018-09-21T09:35:35Z",
-            "name": "[POI2004]SZN.md"
+            "name": "[POI2004]SZN.md",
+            "tags": [
+            ]
         },
         {
             "attachment_folder": "",
@@ -15,7 +17,9 @@
             ],
             "created_time": "2018-09-21T11:55:41Z",
             "modified_time": "2018-09-21T11:55:41Z",
-            "name": "[POI2014]MRO-Ant colony.md"
+            "name": "[POI2014]MRO-Ant colony.md",
+            "tags": [
+            ]
         },
         {
             "attachment_folder": "",
@@ -23,7 +27,9 @@
             ],
             "created_time": "2018-09-25T13:43:46Z",
             "modified_time": "2018-09-25T13:43:46Z",
-            "name": "[USACO17DEC]Greedy Gift Takers.md"
+            "name": "[USACO17DEC]Greedy Gift Takers.md",
+            "tags": [
+            ]
         },
         {
             "attachment_folder": "",
@@ -31,7 +37,9 @@
             ],
             "created_time": "2018-09-27T08:27:15Z",
             "modified_time": "2018-09-27T08:27:15Z",
-            "name": "[USACO18OPEN]Milking Order.md"
+            "name": "[USACO18OPEN]Milking Order.md",
+            "tags": [
+            ]
         },
         {
             "attachment_folder": "",
@@ -39,7 +47,9 @@
             ],
             "created_time": "2018-10-25T06:16:30Z",
             "modified_time": "2018-10-25T06:16:30Z",
-            "name": "[SDOI2013]保护出题人.md"
+            "name": "[SDOI2013]保护出题人.md",
+            "tags": [
+            ]
         }
     ],
     "sub_directories": [
@@ -48,6 +58,9 @@
         },
         {
             "name": "分数规划"
+        },
+        {
+            "name": "整体二分"
         }
     ],
     "version": "1"

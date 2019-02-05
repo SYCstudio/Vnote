@@ -1,6 +1,7 @@
 # reviewlist
 复习清单
 
+[CTSC2018]暴力写挂
 [BZOJ2870]最长道路
 [CEOI2017]Mousetrap
 [BZOJ5312]冒险
@@ -19,37 +20,3 @@
 [IOI2018]排座位
 [IOI2018]高速公路收费
 [IOI2018]机械娃娃
-[IOI2018]狼人
-[IOI2018]组合动作
-[BZOJ4977][LYDSY1708月赛]跳伞求生
-[NWERC2017]Factor-Free Tree
-[BZOJ4482][JSOI2015]套娃
-[BZOJ4282/5427]最长上升子序列
-[BZOJ4765]普通计算姬
-[BZOJ4695]最假女选手
-[NOI2010]航空管制
-[BZOJ4764]弹飞大爷
-[POI2015]WYC
-[BZOJ4767]两双手
-[JSOI2013]吃货jyy
-[JSOI2013]侦探jyy
-[IOI2008]Island
-[BZOJ3159]决战
-[HNOI2015]落忆枫音
-[HNOI2015]亚瑟王
-[HNOI2015]接水果
-[ZJOI2016]旅行者
-[ZJOI2016]大森林
-[BZOJ3510]首都
-[ZJOI2015]幻想乡战略游戏
-[Luogu2676]小清新数据结构题
-[Luogu2664]树上游戏
-[BZOJ3938][集训队互测2015]Robot
-[POI2010]Bridges
-[BZOJ2406]矩阵
-[BZOJ3698]XWW的难题
-[WC2007]剪刀石头布
-[SDOI2014]向量集
-[SDOI2014]LIS
-[CQOI2014]危桥
-[CF235C]Cyclical Quest
