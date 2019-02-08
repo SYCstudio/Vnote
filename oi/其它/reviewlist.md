@@ -1,6 +1,9 @@
 # reviewlist
 复习清单
 
+[清华集训2016]定向越野
+[SDOI2017]龙与地下城
+[CF375C]Circling Round Treasures
 [JLOI2016]圆的异或并
 [NOI2005]月下柠檬树
 [WC2018]即时战略
