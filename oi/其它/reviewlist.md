@@ -1,6 +1,9 @@
 # reviewlist
 复习清单
 
+[CF15E]Triangles
+[UVA10256]The Great Divide
+[UVA11168]Airport
 [CF1019E]Raining season
 [CF1071E]Rain Protection
 [JSOI2018]战争
