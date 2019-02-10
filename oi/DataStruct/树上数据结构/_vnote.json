@@ -1,5 +1,5 @@
 {
-    "created_time": "2018-06-20T09:27:16Z",
+    "created_time": "2019-02-10T01:01:27Z",
     "files": [
     ],
     "sub_directories": [
@@ -20,6 +20,9 @@
         },
         {
             "name": "动态点分治"
+        },
+        {
+            "name": "边分治"
         }
     ],
     "version": "1"
