@@ -1,6 +1,13 @@
 # reviewlist
 复习清单
 
+[CFGym102056E]Immortal … Universe
+[CFGym101955F]Counting Sheep in Ami Dongsuo
+[CFGym102012E]Rikka with Data Structures
+[CFGym102012C]Rikka with Consistency
+[IOI练习赛]冒泡排序(bubblesort)
+[IOI练习赛]风琴(xylophone)
+[CF28C]Bath Queue
 [CF382E]Ksenia and Combinatorics
 [CF15E]Triangles
 [UVA10256]The Great Divide
