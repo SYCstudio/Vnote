@@ -1,6 +1,8 @@
 # reviewlist
 复习清单
 
+[CFGym101981H]Huge Discount
+[CFGym101981C]Cherry and Chocolate
 [CFGym102056E]Immortal … Universe
 [CFGym101955F]Counting Sheep in Ami Dongsuo
 [CFGym102012E]Rikka with Data Structures
