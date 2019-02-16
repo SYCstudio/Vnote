@@ -1,7 +1,9 @@
 # reviewlist
 复习清单
 
-[JOI2017]
+[PA2014]Zadanie Królestwo
+[THUWC2017]随机二分图
+[HNOI2018]游戏
 [CFGym101981H]Huge Discount
 [CFGym101981C]Cherry and Chocolate
 [CFGym102056E]Immortal … Universe
