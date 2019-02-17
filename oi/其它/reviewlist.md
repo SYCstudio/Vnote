@@ -1,6 +1,9 @@
 # reviewlist
 复习清单
 
+[CF526G]Spiders Evil Plan
+[CF850E]Random Elections
+[牛客368E]车站
 [CF1097E]Egor and an RPG game
 [PA2014]Zadanie Królestwo
 [THUWC2017]随机二分图
