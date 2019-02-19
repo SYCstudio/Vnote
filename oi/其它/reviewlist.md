@@ -1,6 +1,8 @@
 # reviewlist
 复习清单
 
+[AGC009E]Eternal Average
+[CFGym101755I]Guess the Tree
 [CF923E]Perpetual Subtraction
 [CFGym101741H]Compressed Spanning Subtrees
 [CF750F]New Year and Finding Roots
