@@ -1,6 +1,8 @@
 # reviewlist
 复习清单
 
+[CF923E]Perpetual Subtraction
+[CFGym101741H]Compressed Spanning Subtrees
 [CF750F]New Year and Finding Roots
 [AGC011F]Train Service Planning
 [CF526G]Spiders Evil Plan
