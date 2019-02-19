@@ -1,6 +1,8 @@
 # reviewlist
 复习清单
 
+[CF750F]New Year and Finding Roots
+[AGC011F]Train Service Planning
 [CF526G]Spiders Evil Plan
 [CF850E]Random Elections
 [牛客368E]车站
