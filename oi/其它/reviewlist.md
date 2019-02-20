@@ -1,6 +1,9 @@
 # reviewlist
 复习清单
 
+[CF1097F]Alex and a TV Show
+[HDU5503]EarthCup
+[CF981H]K Paths
 [AGC009E]Eternal Average
 [CFGym101755I]Guess the Tree
 [CF923E]Perpetual Subtraction
