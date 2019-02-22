@@ -1,6 +1,8 @@
 # reviewlist
 复习清单
 
+[CTSC2016]时空旅行
+[SDOI2015]双旋转字符串
 [PA2014]Fiolki
 [BZOJ4229]选择
 [BZOJ2151]种树
