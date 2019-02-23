@@ -1,6 +1,7 @@
 # reviewlist
 复习清单
 
+[UOJ284]快乐游戏鸡
 [CF576E]Painting Edges
 [HNOI2016]最小公倍数
 [WC2016]挑战NPC
