@@ -1,6 +1,8 @@
 # reviewlist
 复习清单
 
+[CF576E]Painting Edges
+[HNOI2016]最小公倍数
 [WC2016]挑战NPC
 [CTSC2016]时空旅行
 [SDOI2015]双旋转字符串
