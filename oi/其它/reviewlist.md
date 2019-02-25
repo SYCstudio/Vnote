@@ -1,6 +1,9 @@
 # reviewlist
 复习清单
 
+[THUSC2015]异或运算
+[CC SADPAIRS]Chef and Sad Pairs
+[51nod1325]两棵树的问题
 [UOJ284]快乐游戏鸡
 [CF576E]Painting Edges
 [HNOI2016]最小公倍数
