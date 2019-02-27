@@ -30,11 +30,3 @@
 [CFGym101755I]Guess the Tree
 [CF923E]Perpetual Subtraction
 [CFGym101741H]Compressed Spanning Subtrees
-[CF750F]New Year and Finding Roots
-[AGC011F]Train Service Planning
-[CF526G]Spiders Evil Plan
-[CF850E]Random Elections
-[牛客368E]车站
-[CF1097E]Egor and an RPG game
-[PA2014]Zadanie Królestwo
-[THUWC2017]随机二分图
