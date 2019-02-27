@@ -119,6 +119,9 @@
         },
         {
             "name": "Miller-Rabin,Pollar-Rho"
+        },
+        {
+            "name": "拉格朗日插值"
         }
     ],
     "version": "1"
