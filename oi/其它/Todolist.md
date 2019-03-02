@@ -14,3 +14,4 @@ BFPRT
 配对堆
 排序不等式Rearrangement inequality https://www.cnblogs.com/Paul-Guderian/p/10022298.html
 预流推进
+后缀数组 SA-IS 算法：https://blog.xehoth.cc/SA-IS/
