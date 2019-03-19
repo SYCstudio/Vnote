@@ -344,6 +344,12 @@ sudo rm -rf partial
 ```plain
 rename  's/^/asdasdasd/' * 
 ```
+####  rm 反向删除
+运用 find 得到文件，grep 筛选，再喂给 rm 删除
+```plain
+# 删除所有除了包含 cpp 的文件
+rm `find ./* -type f | grep -v "cpp"`
+```
 
 ### git的基本使用
 #### 本地操作
