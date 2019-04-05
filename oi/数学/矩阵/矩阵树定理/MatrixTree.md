@@ -41,6 +41,7 @@ $det(K)=\sum _ {P}{(-1)}^{\tau{(P)}}\times{K} _ {1,p1}\times{K} _ {2,p2}\times{K
 
 #### 性质四
 行列式的线性性
+
 $$\begin{bmatrix} a _ {11} & a _ {12} & \cdots & a _ {1n} \\\\ \vdots & \vdots &  & \vdots \\\\ a _ {i1}+b _ {i1} & a _ {i2}+b _ {i2} & \cdots & a _ {in}+b _ {in} \\\\ \vdots & \vdots &  & \vdots \\\\ a _ {n1} & a _ {n2} & \cdots & a _ {nn} \end{bmatrix} = \begin{bmatrix} a _ {11} & a _ {12} & \cdots & a _ {1n} \\\\ \vdots & \vdots &  & \vdots \\\\ a _ {i1} & a _ {i2} & \cdots & a _ {in} \\\\ \vdots & \vdots &  & \vdots \\\\ a _ {n1} & a _ {n2} & \cdots & a _ {nn} \end{bmatrix} + \begin{bmatrix} a _ {11} & a _ {12} & \cdots & a _ {1n} \\\\ \vdots & \vdots &  & \vdots \\\\ b _ {i1} & b _ {i2} & \cdots & b _ {in} \\\\ \vdots & \vdots &  & \vdots \\\\ a _ {n1} & a _ {n2} & \cdots & a _ {nn} \end{bmatrix}$$
 
 #### 性质五
@@ -110,7 +111,7 @@ int Guass()
 边矩阵变成边权和矩阵，度数矩阵变成出边边权之和，然后就可以正常做高斯消元
 
 ### 有向图计数
-边矩阵变成只记出边，度数矩阵变成只记出边个数，然后余子式$M _ {ii}$就是以$i$为根的有向生成树个数。
+边矩阵变成只记出边，度数矩阵变成只记入度，然后余子式$M _ {ii}$就是以$i$为根的有向生成树个数。
 
 ## 参考
 https://www.cnblogs.com/zj75211/p/8039443.html  
