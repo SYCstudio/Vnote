@@ -17,3 +17,6 @@ Welcome to sycstudio Vnote online mirror. You can click "OI" at the top to view 
 Because the main serve of sycstudio.com is out of date, the old sycstudio.com had been closed down.  
 Now, it links to github pages. And it will always be the newest version.  
 Thanks to @tamlok for his fantastic [Vnote](https://github.com/tamlok/vnote/) and [Viki](https://github.com/tamlok/viki).
+
+> 如果你是从 THUPC 看到这里的，请左转 [yyb小姐姐](http://www.cnblogs.com/cjyyb) [zsy小姐姐](http://www.cnblogs.com/zhoushuyu) [despair小姐姐](https://www.cnblogs.com/ljq-despair/) 这三位队长的博客。
+> 如果你也和博主一样支持 `zsyyb在一起` ，欢迎到 [BZOJ](https://www.lydsy.com/JudgeOnline/wttl/thread.php?tid=6620) 合影留念。
