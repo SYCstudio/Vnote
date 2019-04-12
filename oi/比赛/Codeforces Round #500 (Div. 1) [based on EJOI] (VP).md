@@ -1,0 +1,90 @@
+# Codeforces Round #500 (Div. 1) \[based on EJOI] (VP)
+
+## C.Hills
+
+给定一行 $n$ 个整数表示高度，定义山峰为严格大于两边的高度（如果存在）的点。可以花费 1 的代价使得某一点高度 -1 ，对于每一个 $i \in [1,\lceil \frac{n}{2} \rceil]$ ，求出能选出 $i$ 座山的最小代价。
+
+设 $F[i][j][0/1]$ 表示前 i 个高度选出 j 个山峰，第 $i$ 个是否为山峰的最小代价。 F[i][j][0] 可以从 F[i-1][j][0] 和 F[i-1][j][1] 转移过来， F[i][j][1] 可以从 F[i-2][j-1][0] 和 F[i-2][j-1][1] 转移过来，分别讨论一下。
+
+```cpp
+#include<bits/stdc++.h>
+using namespace std;
+
+const int maxN=5010;
+
+int n,A[maxN];
+int F[maxN][maxN/2][2];
+
+int main(){
+    scanf("%d",&n);for (int i=1;i<=n;i++) scanf("%d",&A[i]);
+    memset(F,127,sizeof(F));
+    F[0][0][0]=F[0][0][1]=0;
+    for (int i=1;i<=n;i++){
+	for (int j=0,limit=i/2+(i&1);j<=limit;j++){
+	    F[i][j][0]=min(F[i-1][j][0],F[i-1][j][1]+max(0,A[i]-A[i-1]+1));
+	    if (j){
+		if (i==1) F[i][j][1]=0;
+		else if (i==2) F[i][j][1]=F[i-1][j-1][0]+max(0,A[i-1]-A[i]+1);
+		else F[i][j][1]=min(F[i-2][j-1][1]+max(0,max(A[i-1]-A[i-2]+1,A[i-1]-A[i]+1)),F[i-2][j-1][0]+max(0,A[i-1]-A[i]+1));
+	    }
+	}
+    }
+    for (int i=1,limit=n/2+(n&1);i<=limit;i++) printf("%d ",min(F[n][i][0],F[n][i][1]));printf("\n");
+    return 0;
+}
+```
+
+## D.AB-Strings
+
+给定两个仅包含 a,b 字符的字符串，每次可以交换两段前缀（前缀可以为空），求最少的操作次数使得两个串分别仅出现 a 和 b ，并给出一种构造方案。
+
+不难发现连续的相同字符可以一起操作，那么输入进来后就压缩成 abab 或者 baba 的形式。考虑一般情况，一次好的交换可以消除两个字符，两个字符串各一个，并且这是每一次操作的上界；但当其中一个字符串长度为 1 时，操作一次并不能达到这个上界，所以在开始的时候就进行调整，把两个字符串补齐。
+
+```cpp
+#include<bits/stdc++.h>
+using namespace std;
+
+const int maxN=505000;
+
+char In[maxN];
+vector<pair<int,int> > A,B,Ans;
+
+void Init(char *S,vector<pair<int,int> > &V);
+void PushBack(vector<pair<int,int> > &V,pair<int,int> p);
+void Exge(int l);
+int main(){
+    scanf("%s",In+1);Init(In,A);scanf("%s",In+1);Init(In,B);
+    int swp=0;if (A.size()>B.size()) swap(A,B),swp=1;
+
+    if (A.back().first==B.back().first){
+	if ((B.size()-A.size())%4==3) Exge((B.size()-A.size()+1)/4*2);
+	int l=(B.size()-A.size())/4*2+1;A.push_back(make_pair(B[B.size()-l-1].first,0));
+	Exge(l);
+    }
+    else if (B.size()-A.size()>2) Exge((B.size()-A.size()+1)/4*2+1);
+
+    while (A.size()>1||B.size()>1) Exge(1);
+    printf("%d\n",(int)Ans.size());
+    for (int i=0,sz=Ans.size();i<sz;i++)
+	swp?printf("%d %d\n",Ans[i].second,Ans[i].first):printf("%d %d\n",Ans[i].first,Ans[i].second);
+    return 0;
+}
+void Init(char *S,vector<pair<int,int> > &V){
+    for (int i=strlen(S+1);i>=1;i--) PushBack(V,make_pair(S[i],1));return;
+}
+void PushBack(vector<pair<int,int> > &V,pair<int,int> p){
+    if (V.empty()||V.back().first!=p.first) V.push_back(p);else V.back().second+=p.second;
+    return;
+}
+void Exge(int l){
+    int tl=0;pair<int,int> la=A.back();A.pop_back();
+    for (int i=l,bsz=B.size();i>=1;i--) PushBack(A,B[bsz-i]),tl+=B[bsz-i].second;
+    Ans.push_back(make_pair(la.second,tl));
+    for (int i=1;i<=l;i++) B.pop_back();PushBack(B,la);
+    return;
+}
+```
+
+## E.Cycle sort
+
+给定一个长度为 $n$ 的序列，
