@@ -20,4 +20,4 @@ Thanks to @tamlok for his fantastic [Vnote](https://github.com/tamlok/vnote/) an
 
 > 如果你是从 THUPC 看到这里的，请左转 [yyb小姐姐](http://www.cnblogs.com/cjyyb) [zsy小姐姐](http://www.cnblogs.com/zhoushuyu) [despair小姐姐](https://www.cnblogs.com/ljq-despair/) 这三位队长的博客。  
 > 如果你也和博主一样支持 `zsyyb在一起` ，欢迎到 [BZOJ](https://www.lydsy.com/JudgeOnline/wttl/thread.php?tid=6620) 合影留念。  
-> 本站同时支持 [orzyyb](./orzyyb/index.html) 服务， `orzzsy` 正在上线中。
+> 本站同时支持 [orzyyb](https://sycstudio.com/orzyyb/index.html) 服务， `orzzsy` 正在上线中。
