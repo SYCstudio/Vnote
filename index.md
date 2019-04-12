@@ -18,6 +18,6 @@ Because the main serve of sycstudio.com is out of date, the old sycstudio.com ha
 Now, it links to github pages. And it will always be the newest version.  
 Thanks to @tamlok for his fantastic [Vnote](https://github.com/tamlok/vnote/) and [Viki](https://github.com/tamlok/viki).
 
-> 如果你是从 THUPC 看到这里的，请左转 [yyb小姐姐](http://www.cnblogs.com/cjyyb) [zsy小姐姐](http://www.cnblogs.com/zhoushuyu) [despair小姐姐](https://www.cnblogs.com/ljq-despair/) 这三位队长的博客。  
+> 如果你是从 THUPC 看到这里的，请左转 [yyb小姐姐](http://www.cnblogs.com/cjyyb) [zsy小姐姐](http://www.cnblogs.com/zhoushuyu) [despair**小哥哥**（本来是小姐姐的，被[已编辑]）](https://www.cnblogs.com/ljq-despair/) 这三位队长的博客。  
 > 如果你也和博主一样支持 `zsyyb在一起` ，欢迎到 [BZOJ](https://www.lydsy.com/JudgeOnline/wttl/thread.php?tid=6620) 合影留念。  
 > 本站同时支持 [orzyyb](https://sycstudio.com/orzyyb/index.html) 服务， `orzzsy` 正在上线中。
