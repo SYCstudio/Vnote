@@ -1,4 +1,5 @@
 # Codeforces Round #500 (Div. 1) \[based on EJOI] (VP)
+[link](http://codeforces.com/contest/1012)
 
 ## C.Hills
 
