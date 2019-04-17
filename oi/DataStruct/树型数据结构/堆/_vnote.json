@@ -23,6 +23,9 @@
         }
     ],
     "sub_directories": [
+        {
+            "name": "配对堆"
+        }
     ],
     "version": "1"
 }
