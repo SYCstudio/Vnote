@@ -23,4 +23,4 @@ SYCstudio, 长郡中学 2020 届
 > 如果你是从 THUPC 看到这里的，请左转 [yyb小姐姐](http://www.cnblogs.com/cjyyb) [zsy小哥哥](http://www.cnblogs.com/zhoushuyu) [despair*小哥哥*（本来是小姐姐的，被[数据删除]）](https://www.cnblogs.com/ljq-despair/) 这三位队长的博客。  
 > 如果你也和博主一样支持 `zsyyb在一起` ，欢迎到 [BZOJ](https://www.lydsy.com/JudgeOnline/wttl/thread.php?tid=6620) 合影留念。  
 > 本站同时支持 [orzyyb](https://sycstudio.com/orzyyb/index.html) 服务， `orzzsy` 正在上线中。  
-> By `「 yyb 大小姐想要我告白 ~ 天才 oier 的恋爱头脑战 」制作企划小组` 2019.4.12
+> By `「 yyb 姬想要让人告白 ~ 天才 oier 的恋爱头脑战 」制作企划小组` 2019.4.12
