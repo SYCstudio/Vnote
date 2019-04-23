@@ -5,34 +5,20 @@
             "attachment_folder": "",
             "attachments": [
             ],
-            "created_time": "2018-10-16T10:38:05Z",
-            "modified_time": "2019-01-31T02:28:24Z",
-            "name": "百年孤独.md",
-            "tags": [
-            ]
-        },
-        {
-            "attachment_folder": "",
-            "attachments": [
-            ],
-            "created_time": "2019-04-05T08:06:05Z",
-            "modified_time": "2019-04-05T09:18:07Z",
-            "name": "瓦尔登湖.md",
-            "tags": [
-            ]
-        },
-        {
-            "attachment_folder": "",
-            "attachments": [
-            ],
             "created_time": "2019-04-08T10:51:13Z",
             "modified_time": "2019-04-09T11:35:39Z",
-            "name": "Co.md",
+            "name": "摘.md",
             "tags": [
             ]
         }
     ],
     "sub_directories": [
+        {
+            "name": "已读完"
+        },
+        {
+            "name": "未读完"
+        }
     ],
     "version": "1"
 }
