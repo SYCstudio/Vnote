@@ -6,7 +6,7 @@
 [Luogu](https://www.luogu.org/space/show?uid=11989) | [BZOJ](https://www.lydsy.com/JudgeOnline/userinfo.php?user=SYCstudio) | [UOJ](http://uoj.ac/user/profile/SYCstudio) | [LOJ](https://loj.ac/user/1480) | [Codeforces](http://codeforces.com/profile/SYCstudio) | [Atcoder](https://atcoder.jp/users/SYCstudio)  
 `QQ:1726016246` | `sycstudio@qq.com` | `sycstudiosyc@gmail.com` | `sycstudio@yandex.com`
 
-SYCstudio, 长郡中学 2020 届
+SYCstudio, 长郡中学 2020 届，现已 AFO 。
 
 欢迎来到 sycstudio 的 Vnote 笔记镜像，点击上面的 [OI](https://sycstudio.com/#!oi/_vnote.json) 来进入笔记目录。  
 原 sycstudio.com 主服务器于 2018 年 12 月 23 日到期，由于博主的笔记均更新在本地 Vnote ，故决定迁移至 GitHub Pages 并以 Viki 作为生成框架。这里的文章将会是实时更新的。  
