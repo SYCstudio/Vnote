@@ -12,9 +12,9 @@
 
 $$
 \begin{align}
-Ans&=\sum _ {i=1} ^ n \sum _ {j=1} ^ n \sum _ {u|i} \sum _ {v|i} [u \perp v] \nonumber \\\\
-&=\sum _ {u=1} ^ n \sum _ {v=1} ^ n [u \perp v] \lfloor \frac{n}{u} \rfloor \lfloor \frac{n}{v} \rfloor \nonumber \\\\
-&=\sum _ {d=1} ^ n \mu(d) (\sum _ {i=1} ^ {n/d} \lfloor \frac{n}{id} \rfloor) ^ 2
+Ans&=\sum _ {i=1} ^ n \sum _ {j=1} ^ n \sum _ {u|i} \sum _ {v|i} [u \perp v] \nonumber \\
+&=\sum _ {u=1} ^ n \sum _ {v=1} ^ n [u \perp v] \lfloor \frac{n}{u} \rfloor \lfloor \frac{n}{v} \rfloor \nonumber \\
+&=\sum _ {d=1} ^ n \mu(d) (\sum _ {i=1} ^ {n/d} \lfloor \frac{n}{id} \rfloor) ^ 2 \nonumber
 \end{align}
 $$
 

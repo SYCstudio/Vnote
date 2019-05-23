@@ -13,8 +13,8 @@ $$\Large \left[ \sum _ {i=0}^n \left( {n\choose i} \cdot s^{i} \cdot a _ {i\bmod
 
 $$
 \begin{align}
-\sum _ {i=0} ^ n a _ i [4|i] &= \sum _ {i=0} ^ n a _ i \frac{1}{4} \sum _ {j=0} ^ 3 \omega _ k ^ {ij} \nonumber \\\\
-&=\frac{1}{4} \sum _ {j=0} ^ {3} \sum _ {i=0} ^ n a _ i (\omega _ k ^ j) ^ i \nonumber \\\\
+\sum _ {i=0} ^ n a _ i [4|i] &= \sum _ {i=0} ^ n a _ i \frac{1}{4} \sum _ {j=0} ^ 3 \omega _ k ^ {ij} \nonumber \\
+&=\frac{1}{4} \sum _ {j=0} ^ {3} \sum _ {i=0} ^ n a _ i (\omega _ k ^ j) ^ i \nonumber \\
 &=\frac{1}{4} \sum _ {j=0} ^ {k-1} F(\omega _ k ^ i )\nonumber
 \end{align}
 $$

@@ -72,7 +72,7 @@ void Fc(map<ll,ll> &M,ll X){
     if (Miller_Rabin(X)){
         ++M[X];return;
     }
-    ll d=X; while (d==X) d=Pollard_Rho(X);
+    ll d=X;while (d==X) d=Pollard_Rho(X);
     Fc(M,d);Fc(M,X/d);return;
 }
 bool Miller_Rabin(ll X){

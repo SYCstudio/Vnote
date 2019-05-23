@@ -7,7 +7,7 @@
 
 $$
 \begin{align}
-g(n)=f(n)-\sum_{i=1}^{n-1}\binom{n-1}{i}f(n-i)g(i)
+g(n)=f(n)-\sum_{i=1}^{n-1}\binom{n-1}{i}f(n-i)g(i) \nonumber
 \end{align}
 $$
 

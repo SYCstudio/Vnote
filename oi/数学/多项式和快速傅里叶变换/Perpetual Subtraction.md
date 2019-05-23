@@ -11,10 +11,10 @@ Determine the distribution of final number given the distribution of initial num
 
 $$
 \begin{align}
-F'(x)&=\sum _ {i=1} ^ n x ^ i \sum _ {j=i} ^ n \frac{f _ j}{j+1} \nonumber\\\\
-&=\sum _ {i=0} ^ n \frac{f _ i}{i+1} \sum _ {j=0} ^ i x ^ j \nonumber \\\\
-&=\sum _ {i=0} ^ n \frac{f _ i}{i+1} \frac{x ^ {i+1}-1}{x-1} \nonumber \\\\
-&=\frac{1}{x-1} \sum _ {i=0} ^ n \frac{f _ i (x ^ {i+1}-1)}{i+1} \nonumber \\\\
+F'(x)&=\sum _ {i=1} ^ n x ^ i \sum _ {j=i} ^ n \frac{f _ j}{j+1} \nonumber\\
+&=\sum _ {i=0} ^ n \frac{f _ i}{i+1} \sum _ {j=0} ^ i x ^ j \nonumber \\
+&=\sum _ {i=0} ^ n \frac{f _ i}{i+1} \frac{x ^ {i+1}-1}{x-1} \nonumber \\
+&=\frac{1}{x-1} \sum _ {i=0} ^ n \frac{f _ i (x ^ {i+1}-1)}{i+1} \nonumber \\
 &=\frac{1}{x-1} \sum _ {i=0} ^ n \int _ 1 ^x f _ i t ^ i dt\nonumber
 \end{align}
 $$
@@ -23,9 +23,9 @@ $$
 
 $$
 \begin{align}
-G'(x)&=\frac{1}{x} \sum _ {i=0} ^ n \int _ 1 ^ {x+1} f _ i t ^ i dt \nonumber \\\\
-&=\frac{1}{x} \sum _ {i=0} ^ n \int _ 0 ^ x g _ i t ^ i dt \nonumber \\\\
-&=\frac{1}{x} \sum _ {i=0} ^ n \frac{g _ ix ^ {i+1}}{i+1} \nonumber \\\\
+G'(x)&=\frac{1}{x} \sum _ {i=0} ^ n \int _ 1 ^ {x+1} f _ i t ^ i dt \nonumber \\
+&=\frac{1}{x} \sum _ {i=0} ^ n \int _ 0 ^ x g _ i t ^ i dt \nonumber \\
+&=\frac{1}{x} \sum _ {i=0} ^ n \frac{g _ ix ^ {i+1}}{i+1} \nonumber \\
 &=\sum _ {i=0} ^ n \frac{g _ i x ^ i}{i+1}\nonumber
 \end{align}
 $$

@@ -7,8 +7,8 @@
 
 $$
 \begin{align}
-f(n)&=\sum _ {i=1}^n (-1)^{i-1} \binom{n}{i}f(n-i)2^{i(n-i)} \\\\
-f(n)&=\sum _ {i=1}^n (-1)^{i-1} \frac{n!}{(n-i)!i!}2^{i(n-i)}
+f(n)&=\sum _ {i=1}^n (-1)^{i-1} \binom{n}{i}f(n-i)2^{i(n-i)} \nonumber\\
+f(n)&=\sum _ {i=1}^n (-1)^{i-1} \frac{n!}{(n-i)!i!}2^{i(n-i)} \nonumber
 \end{align}
 $$
 
@@ -16,8 +16,8 @@ $$
 
 $$
 \begin{align}
-f(n)&=\sum _ {i=1}^n(-1)^{i-1} \frac{n!}{(n-i)!i!} \frac{t^{n^2}}{t^{i^2}t^{(n-i)^2}}f(n-i) \\\\
-\frac{f(n)}{n!t^{n^2}}&=\sum _ {i=1}^n\frac{f(n-i)}{(n-i)!t^{(n-i)^2}} \frac{(-1)^{i-1}}{i!t^{i^2}}
+f(n)&=\sum _ {i=1}^n(-1)^{i-1} \frac{n!}{(n-i)!i!} \frac{t^{n^2}}{t^{i^2}t^{(n-i)^2}}f(n-i) \nonumber\\
+\frac{f(n)}{n!t^{n^2}}&=\sum _ {i=1}^n\frac{f(n-i)}{(n-i)!t^{(n-i)^2}} \frac{(-1)^{i-1}}{i!t^{i^2}} \nonumber
 \end{align}
 $$
 
