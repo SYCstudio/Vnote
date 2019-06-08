@@ -16,3 +16,5 @@
 另：如果你发现了任何错误，不论是内容上的还是网站结构上的，欢迎通过上面的任意一种方式联系我，或者在 Github 上提 Issue 。
 
 本站更新历史可在 [Github](https://github.com/SYCstudio/Vnote) 查看。
+
+本站资瓷：[orzyyb](./orzyyb),[orzxzz](./orzxzz),[打篮球](./cxk-ball) ，感谢 @xzz\_233 @iotang 的友情赞助。
