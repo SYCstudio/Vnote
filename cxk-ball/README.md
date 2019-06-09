@@ -2,31 +2,35 @@
 
 # 🏀 CXK 打篮球
 
-本项目是 CXK 打篮球的游戏，原项目：[h5-game-blockBreaker](https://github.com/yangyunhe369/h5-game-blockBreaker)
+本项目是 CXK 打篮球的游戏，原项目：[h5-game-blockBreaker](https://github.com/yangyunhe369/h5-game-blockBreaker) | [demo](https://sycstudio.com/cxk-ball/)
 
 **ReadMe:** [English Version](README_EN.md)
 
 > ⚠ 警告
 >
-> 本游戏有一定难度，请 ikun 们不要轻易尝试
+> 本游戏有较高难度与技术性，请 ikun 们不要轻易尝试
 
 最后，喜欢的话欢迎点个 Star，谢谢
 
 ## 游戏截图
 
-![](https://s2.ax1x.com/2019/06/04/Vtzjuq.png)
+![游戏界面截图](https://s2.ax1x.com/2019/06/09/VrCgQx.png)
 
-游戏有更多种难度可选择（简单、普通、困难、极限以及更多）
+游戏有更多种难度可选择
+
+从极简单到 I Wanna，总有一个适合你
 
 速度大于等于 8 的难度请勿轻易尝试，否则可能会疯掉（雾
 
-![](https://s2.ax1x.com/2019/06/04/VN9bCD.gif)
+![等级 10 实况](https://s2.ax1x.com/2019/06/09/VrCfeO.gif)
 
 祝您游戏愉快
 
 ## 如何体验
 
-你可以直接 clone 到本地
+你可以访问临时搭建的 [demo](https://sycstudio.com/cxk-ball/)，
+
+也可以直接 clone 到本地
 
 原项目：
 

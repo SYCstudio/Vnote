@@ -2,25 +2,49 @@
 
 # CXK Play BasketBall
 
-This Project's name is "CXK Play BasketBall" Game，The original Project：[h5-game-blockBreaker](https://github.com/yangyunhe369/h5-game-blockBreaker)
+This Project's name is "CXK Play BasketBall" Game，The original Project：[h5-game-blockBreaker](https://github.com/yangyunhe369/h5-game-blockBreaker) | [demo](https://sycstudio.com/cxk-ball/)
 
-Finally, If you like this game, please give me a star, thanks!
+Finally, If you like this game, please give us a star, thanks!
 
 ## Game Screenshots
 
-![](https://s2.ax1x.com/2019/06/04/Vtzjuq.png)
+![Game Main Screenshot](https://s2.ax1x.com/2019/06/09/VrCgQx.png)
 
-The game has several levels to choose from (easy, normal, difficult, super hard and more harder difficulties)
+The game has many speed levels to choose.
 
-The mode which speed>=8, Please ikun's don't try it lightly, Otherwise it might go crazy. (XD
+From EXTREME-EASY to I WANNA, there will be a level fit you.
 
-![](https://s2.ax1x.com/2019/06/04/VN9bCD.gif)
+The mode which speed>=8, Please ikuns don't try it lightly, Otherwise you might go crazy. (XD
+
+![Lv10 Failure](https://s2.ax1x.com/2019/06/09/VrCfeO.gif)
+
+> Translate:
+>
+> Difficulty: Ori and the Blind Forest-like, Speed 10
+>
+> Level: 1
+>
+> Q: Ball Mind-controlling, CD 3 sec, Cost 3178
+>
+> W: Kun's Shuffle, CD 15 sec, Cost 15887
+>
+> E: Blink Master, CD 0.2 sec, Cost 993
+>
+> R: Ikuns' Bless, CD 30 sec, Cost 4766
+>
+> Hi-Score: 63045 (start)
+>
+> Sum of Score: 125494 (final)
+>
+> Now Score: XXXX
 
 Wish you have a good game!
 
 ## How to experience
 
-You can git clone this project to local
+You can play it online on the temporary [demo](https://sycstudio.com/cxk-ball/).
+
+And also you can git clone this project to local.
 
 Original Project:
 
@@ -38,7 +62,7 @@ Browse your Homepage or use Browser opens `index.html` to play.
 
 ## Common problems
 
-If encounter any problems, please try to refresh, else if refresh can't solve problems, Please Press Button F12 to open the browser console view whether or not to report errors.
+If encounter any problems, please try to refresh. If it can't solve problems, Please Press Button F12 to open the browser console view whether or not to report errors.
 
 If so, you can try to solve it yourself or take a screenshot through the Issues feedback, please provide information about the browser and the device, please follow the Issues specification.
 
@@ -60,7 +84,7 @@ The performance of the device is too low, it is recommended to use a computer to
 
 > __Q: I can't hear the sound__
 
-No music provided now.
+No music provided now. :(
 
 ## Future plans
 
