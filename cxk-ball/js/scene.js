@@ -49,7 +49,8 @@ class Paddle
 		if (rangeX < 0)
 		{ // 小球撞击挡板左侧
 			return rangeX / (b.w / 2 + p.w / 2) * p.ballSpeedMax
-		} else if (rangeX > 0)
+		}
+		else if (rangeX > 0)
 		{ // 小球撞击挡板右侧
 			return rangeX / (b.w / 2 + p.w / 2) * p.ballSpeedMax
 		}
@@ -88,7 +89,7 @@ class Ball
 				this.speedY *= -1
 				this.y = 0;
 			}
-			if (this.y > _main.ballshadow.y - (this.h - 16))
+			if (this.y > _main.ballshadow.y - this.h + 24)
 			{
 				// 游戏结束
 				game.state = game.state_GAMEOVER
@@ -145,7 +146,8 @@ class Block
 		if (this.life == 0)
 		{
 			this.alive = false
-		} else if (this.life == 1)
+		}
+		else if (this.life == 1)
 		{
 			this.image = imageFromPath(allImg.block1)
 		}
@@ -159,7 +161,8 @@ class Block
 		{
 			this.kill()
 			return true
-		} else
+		}
+		else
 		{
 			return false
 		}
@@ -178,7 +181,8 @@ class Block
 			if (b.x < bk.x && b.speedX > 0 || b.x > bk.x && b.speedX < 0)
 			{ // 小球在砖块左侧时
 				return false
-			} else
+			}
+			else
 			{ // 小球在砖块右侧
 				return true
 			}
@@ -194,8 +198,8 @@ class Score
 		let s = {
 			x: _main.score_x,                               // x轴坐标
 			y: _main.score_y,                               // y轴坐标
-			text: '分数 ',                                  // 文本分数
-			textLv: '关卡 ',                                // 关卡文本
+			text: "分数",                                  // 文本分数
+			textLv: "关卡 ",                                // 关卡文本
 			score: 1,                                       // 每个砖块对应分数
 			allScore: 0,                                    // 总分
 			scorepunishment: 0,                             // 分数惩罚
@@ -203,7 +207,7 @@ class Score
 			blockListLen: _main.blockList.length,           // 砖块总数量
 			lv: _main.LV,                                   // 当前关卡
 
-			grandHighestScore: 125494,                       // 最高分
+			grandHighestScore: 156697,                       // 最高分
 		}
 		Object.assign(this, s)
 	}
@@ -252,7 +256,8 @@ class Scene
 				{
 					let obj = new Block(list.x, list.y)
 					arr.push(obj)
-				} else if (list.type === 2)
+				}
+				else if (list.type === 2)
 				{
 					let obj = new Block(list.x, list.y, 2)
 					arr.push(obj)
@@ -274,8 +279,33 @@ class Scene
 
 		switch (lv)
 		{
-
-			case 1: // 正三角形
+			case 1:
+				let maps = [
+					" xxx  xx xx xx  x",
+					"xx xx xx xx xx xx",
+					"xx     xxx  xxx  ",
+					"xx    xx xx xx x ",
+					"xx xx xx xx xx xx",
+					" xxx  xx xx xx xx"
+				];
+				let xlen = 17, ylen = 6;
+				for (let i = 0; i < ylen; i++)
+				{
+					let arr = [];
+					x_start = (xNum_max - xlen) / 2 * 50;
+					for (let j = 0; j < xlen; j++)
+					{
+						if (maps[i][j] != ' ')
+							arr.push({
+								x: x_start + j * 50,
+								y: y_start + i * 20,
+								type: 1 + ((i + j) & 1)
+							});
+					}
+					this.blockList.push(arr);
+				}
+				break;
+			case 2: // 正三角形
 				var xNum = 16,                               // x轴砖块第一层数量
 					yNum = 9                                 // y轴砖块层数
 				// 循环y轴
@@ -286,10 +316,12 @@ class Scene
 					if (i === 0)
 					{
 						xNum = 1
-					} else if (i === 1)
+					}
+					else if (i === 1)
 					{
 						xNum = 2
-					} else
+					}
+					else
 					{
 						xNum += 2
 					}
@@ -304,7 +336,8 @@ class Scene
 								y: y_start + i * 20,
 								type: 2,
 							})
-						} else
+						}
+						else
 						{
 							arr.push({
 								x: x_start + k * 50,
@@ -316,7 +349,7 @@ class Scene
 					this.blockList.push(arr)
 				}
 				break
-			case 2:  // 倒三角形
+			case 3:  // 倒三角形
 				var xNum = 16,                              // x轴砖块第一层数量
 					yNum = 9                                // y轴砖块层数
 				// 循环y轴
@@ -327,10 +360,12 @@ class Scene
 					if (i === yNum - 1)
 					{
 						xNum = 1
-					} else if (i === 0)
+					}
+					else if (i === 0)
 					{
 						xNum = xNum
-					} else
+					}
+					else
 					{
 						xNum -= 2
 					}
@@ -345,7 +380,8 @@ class Scene
 								y: y_start + i * 20,
 								type: 2,
 							})
-						} else
+						}
+						else
 						{
 							arr.push({
 								x: x_start + k * 50,
@@ -357,7 +393,7 @@ class Scene
 					this.blockList.push(arr)
 				}
 				break
-			case 3: // 工字形
+			case 4: // 工字形
 				var xNum = 16,                              // x轴砖块第一层数量
 					yNum = 9                                // y轴砖块层数
 				// 循环y轴
@@ -368,10 +404,12 @@ class Scene
 					if (i === 0)
 					{
 						xNum = xNum
-					} else if (i > 4)
+					}
+					else if (i > 4)
 					{
 						xNum += 2
-					} else
+					}
+					else
 					{
 						xNum -= 2
 					}
@@ -386,7 +424,8 @@ class Scene
 								y: y_start + i * 20,
 								type: 2,
 							})
-						} else
+						}
+						else
 						{
 							arr.push({
 								x: x_start + k * 50,
@@ -398,7 +437,7 @@ class Scene
 					this.blockList.push(arr)
 				}
 				break
-			case 4: // 隔层
+			case 5: // 隔层
 				var xNum = 18,                               // x轴砖块第一层数量
 					yNum = 12                                 // y轴砖块层数
 				// 循环y轴
@@ -419,7 +458,8 @@ class Scene
 									y: y_start + i * 20,
 									type: 2,
 								})
-							} else
+							}
+							else
 							{
 								arr.push({
 									x: x_start + k * 50,

@@ -19,13 +19,15 @@ class Skill
 		this.cd = cd;
 		this.cost = cost;
 		this.delta = 0;
-		if (typeof keyCode === 'number')
+		if (typeof keyCode === "number")
 		{
 			this.keyCode = keyCode;
-		} else if (typeof keyCode === 'string' && keyCode.length === 1)
+		}
+		else if (typeof keyCode === "string" && keyCode.length === 1)
 		{
 			this.keyCode = keyCode.toUpperCase().charCodeAt(0);
-		} else
+		}
+		else
 		{
 			throw new Error(`技能 ${name} 无法绑定按键 "${keyCode}"`);
 		}
@@ -42,9 +44,9 @@ class Skill
 
 	bindKey()
 	{
-		window.addEventListener('keydown', (event) =>
+		window.addEventListener("keydown", (event) =>
 		{
-			if ((typeof this.keyCode === 'number' && event.keyCode === this.keyCode)
+			if ((typeof this.keyCode === "number" && event.keyCode === this.keyCode)
 				|| (Array.isArray(this.keyCode) && this.keyCode.indexOf(event.keyCode) >= 0)
 			)
 			{
@@ -54,12 +56,12 @@ class Skill
 				} catch (e)
 				{
 					// TODO 使用更好的方式提示
-					console.log('技能释放失败：', e.message);
+					console.log("技能释放失败：", e.message);
 				}
 			}
 		});
 
-		const keyName = typeof this.keyCode === 'number' ? String.fromCharCode(this.keyCode) : this.keyCode.map(key => String.fromCharCode(key)).join('/');
+		const keyName = typeof this.keyCode === "number" ? String.fromCharCode(this.keyCode) : this.keyCode.map(key => String.fromCharCode(key)).join("/");
 
 		this.delta = Math.ceil(this.cost * Math.pow(window.cacheBallSpeed, 2.9));
 		console.log(`CXK 已加载技能：[${keyName}]${this.name}，冷却 ${this.cd}，消耗 ${this.delta}`);
@@ -76,7 +78,7 @@ class Skill
 		if (this.lastCastTime + this.cd * 1000 > nowtime)
 		{
 			let distan = this.cd - ((this.lastCastTime + this.cd * 1000) - nowtime) / 1000.00;
-			distan = distaskille.deltan.toFixed(2);
+			distan = distan.toFixed(2);
 			this.isRunning = 0;
 			throw new Error(`技能尚未冷却 (${distan} / ${this.cd})`);
 		}
@@ -102,12 +104,12 @@ class SkillQ extends Skill
 	constructor(main)
 	{
 		super(main,
-			'意念控球',
-			'',
-			'CXK 使用意念控制球转向一次，朝向离球最近的一个砖块',
+			"意念控球",
+			"",
+			"CXK 使用意念控制球转向一次，朝向离球最近的一个砖块",
 			3,
 			4,
-			'Q');
+			"Q");
 	}
 
 	/**
@@ -151,8 +153,8 @@ class SkillQ extends Skill
 		}
 		let per = Math.abs(window.cacheBallSpeed / ball.speedY);
 		ball.speedX = ball.speedX * per;
-		ball.speedX = Math.min(ball.speedX, 120);
-		ball.speedX = Math.max(ball.speedX, -120);
+		ball.speedX = Math.min(ball.speedX, 60);
+		ball.speedX = Math.max(ball.speedX, -60);
 		if (ball.speedY >= 0) ball.speedY = window.cacheBallSpeed;
 		else ball.speedY = -window.cacheBallSpeed;
 	}
@@ -163,12 +165,12 @@ class SkillW extends Skill
 	constructor(main)
 	{
 		super(main,
-			'虚鲲鬼步',
-			'',
-			'CXK 发动在美国校队时领悟的绝技，5 秒内让篮球跟着 CXK',
+			"虚鲲鬼步",
+			"",
+			"CXK 发动在美国校队时领悟的绝技，5 秒内让篮球跟着 CXK",
 			15,
 			20,
-			'W');
+			"W");
 		this.duration = 5;  // 持续5秒
 	}
 
@@ -182,7 +184,8 @@ class SkillW extends Skill
 		this.casting = setInterval(() =>
 		{
 			ball.x = paddle.x + paddle.w / 2;
-		}, 10);
+			ball.speedX = 0;
+		}, 1000 / 60);
 		setTimeout(() =>
 		{
 			clearInterval(this.casting);
@@ -196,12 +199,12 @@ class SkillE extends Skill
 	constructor(main)
 	{
 		super(main,
-			'闪烁之鲲',
-			'',
-			'CXK 利用自己长期跳舞的经验，向当前方向闪烁一小段距离',
+			"闪烁之鲲",
+			"",
+			"CXK 利用自己长期跳舞的经验，向当前方向闪烁一小段距离",
 			0.2,
 			1.25,
-			'E');
+			"E");
 	}
 
 	cast()
@@ -212,16 +215,16 @@ class SkillE extends Skill
 		};
 		const { paddle, ball } = this.main;
 
-		let transdis = 120;
+		let transdis = 150;
 
 		if (move_way == 2)
 		{
-			if (ball.x < paddle.x) paddle.x = Math.max(ball.x, paddle.x - transdis);
+			if (ball.x < paddle.x && ball.y + 80 > paddle.y) paddle.x = Math.max(ball.x, paddle.x - transdis);
 			else paddle.x = Math.max(-30, paddle.x - transdis);
 		}
 		if (move_way == 1)
 		{
-			if (ball.x > paddle.x) paddle.x = Math.min(ball.x, paddle.x + transdis);
+			if (ball.x > paddle.x && ball.y + 80 > paddle.y) paddle.x = Math.min(ball.x, paddle.x + transdis);
 			else paddle.x = Math.min(paddle.x + transdis, canvas.width - 40);
 		};
 	}
@@ -232,12 +235,12 @@ class SkillR extends Skill
 	constructor(main)
 	{
 		super(main,
-			'爱坤之祝',
-			'',
-			'ikun 们对 CXK 施加祝福，其它技能的 CD 和消耗降低了',
+			"爱坤之祝",
+			"",
+			"ikun 们对 CXK 施加祝福，其它技能的 CD 和消耗降低了",
 			30,
 			6,
-			'R');
+			"R");
 		this.duration = 10;  // 持续10秒
 	}
 
@@ -262,7 +265,6 @@ class SkillR extends Skill
 
 		this.casting = setInterval(() =>
 		{
-			console.log(`${game.state} , ${game.state_GAMEOVER} , ${game.state_UPDATE}`);
 			if (game.state == game.state_GAMEOVER || game.state == game.state_UPDATE)
 			{
 				isover = 1;
@@ -283,7 +285,7 @@ class SkillR extends Skill
 				skillw.delta = Math.ceil(skillwdlt / 3);
 				skille.delta = Math.ceil(skilledlt / 3);
 			}
-		}, 10);
+		}, 125);
 
 		setTimeout(() =>
 		{

@@ -4,11 +4,11 @@
 
 This Project's name is "CXK Play BasketBall" Game，The original Project：[h5-game-blockBreaker](https://github.com/yangyunhe369/h5-game-blockBreaker) | [demo](https://sycstudio.com/cxk-ball/)
 
-Finally, If you like this game, please give us a star, thanks!
+If you like this game, please give us a star, thanks!
 
 ## Game Screenshots
 
-![Game Main Screenshot](https://s2.ax1x.com/2019/06/09/VrCgQx.png)
+![Game Main Screenshot](https://s2.ax1x.com/2019/06/10/VyU1rn.png)
 
 The game has many speed levels to choose.
 
@@ -16,13 +16,31 @@ From EXTREME-EASY to I WANNA, there will be a level fit you.
 
 The mode which speed>=8, Please ikuns don't try it lightly, Otherwise you might go crazy. (XD
 
-![Lv10 Failure](https://s2.ax1x.com/2019/06/09/VrCfeO.gif)
+![Lv10 Failure](https://s2.ax1x.com/2019/06/10/VyU3bq.gif)
+
+[Click me if the gif failed to show](https://s2.ax1x.com/2019/06/10/VyU3bq.gif)
 
 > Translate:
 >
+> *Top*
+>
 > Difficulty: Ori and the Blind Forest-like, Speed 10
 >
-> Level: 1
+> *Top Left*
+>
+> Level: X
+>
+> *Top Right*
+>
+> Combo: X
+>
+> *Middle Right*
+>
+> Perfomance: XX.XXXX
+>
+> Ball Catch Count: XX
+>
+> *Bottom*
 >
 > Q: Ball Mind-controlling, CD 3 sec, Cost 3178
 >
@@ -32,9 +50,9 @@ The mode which speed>=8, Please ikuns don't try it lightly, Otherwise you might 
 >
 > R: Ikuns' Bless, CD 30 sec, Cost 4766
 >
-> Hi-Score: 63045 (start)
+> Hi-Score: 125494 (start)
 >
-> Sum of Score: 125494 (final)
+> Sum of Score: 156697 (final)
 >
 > Now Score: XXXX
 
@@ -66,23 +84,27 @@ If encounter any problems, please try to refresh. If it can't solve problems, Pl
 
 If so, you can try to solve it yourself or take a screenshot through the Issues feedback, please provide information about the browser and the device, please follow the Issues specification.
 
-> __Q: Does this game infringe on the portrait rights of others__
+> **Q: How to cast skills?**
+
+![Control](images/cxk_ball_control.png)
+
+> **Q: Does this game infringe on the portrait rights of others**
 
 [Please see this note](about.md)
 
-> __Q: The map is displayed incorrectly or very strangely__
+> **Q: The map is displayed incorrectly or very strangely**
 
 Maybe Network Problem, try refreshing, or check the browser console for resource loading error messages.
 
-> __Q: I do not respond by pressing the left and right arrow keys__
+> **Q: I do not respond by pressing the left and right arrow keys**
 
 Please use KEY A and KEY D
 
-> __Q: I feel a little bit lag when I play this game__
+> **Q: I feel a little bit lag when I play this game**
 
 The performance of the device is too low, it is recommended to use a computer to get the best experience, and it is recommended to use modern browsers such as Firefox and Chrome.
 
-> __Q: I can't hear the sound__
+> **Q: I can't hear the sound**
 
 No music provided now. :(
 
