@@ -67,9 +67,9 @@ function orzzsyMain() {
     document.getElementById("orzTimes").innerHTML = "你已经催了 zsy " + orzTimesCnt + " 次。";
 
     if (orzTimesCnt < 100) orzTimesDelta = 1;
-    else if (orzTimesCnt < 1000) orzTimesDelta = Math.min(1000 - orzTimesCnt, Math.floor(Math.random() * 16 + 10000));////////
-    else if (orzTimesCnt < 10000) orzTimesDelta = Math.min(10000 - orzTimesCnt, Math.floor(Math.random() * 128 + 10000));///////
-    else if (orzTimesCnt < 65533) orzTimesDelta = Math.min(65533 - orzTimesCnt, Math.floor(Math.random() * 512 + 10000));///////
+    else if (orzTimesCnt < 1000) orzTimesDelta = Math.min(1000 - orzTimesCnt, Math.floor(Math.random() * 16 ));
+    else if (orzTimesCnt < 10000) orzTimesDelta = Math.min(10000 - orzTimesCnt, Math.floor(Math.random() * 128 ));
+    else if (orzTimesCnt < 65533) orzTimesDelta = Math.min(65533 - orzTimesCnt, Math.floor(Math.random() * 512 ));
     else orzTimesDelta = 1;
 
     document.getElementById("orzButtonClickTimes").innerHTML = "（你已经点击了这个按钮 " + orzButtonClicked + " 次。）";
