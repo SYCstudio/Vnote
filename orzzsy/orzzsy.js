@@ -143,8 +143,12 @@ function orzzsyLast1() {
 			<img src=\"yyb-zsy-together.png\"><br>\
 			* 『那就来做♂我男朋友吧！』！<br>\
 			<img src=\"boyfriend.jpeg\"><br>\
+		</h1>\
 		<button style=\"font-size: 24px; color:#000000\" onclick=\"orzzsyLast2()\">										\
 			同意并签字  																								\
+		</button>																										\
+		<button style=\"font-size: 24px; color:#000000\" onclick=\"orzzsyLast2_()\">										\
+			不同意并企图离开  																								\
 		</button>																										\
 		";
 }
@@ -166,5 +170,38 @@ function orzzsyLast2() {
 		<button style=\"font-size: 24px; color:#000000\" onclick=\"javascript:location.reload();\">						\
 			继续 orz zsy！																								\
 		</button>																										\
+		";
+}
+var swapButtons=function(){
+	if(!swapButtons.state){
+		$("#button1").html("我还是不同意");
+		$("#button1").attr("onclick","swapButtons();");
+		$("#button2").html("同意并签字");
+		$("#button2").attr("onclick","orzzsyLast2();");
+	}else{
+		$("#button2").html("我还是不同意");
+		$("#button2").attr("onclick","swapButtons();");
+		$("#button1").html("同意并签字");
+		$("#button1").attr("onclick","orzzsyLast2();");
+	}
+	swapButtons.state^=1;
+};
+swapButtons.state=0;
+function orzzsyLast2_() {
+    document.getElementById("mainArea").innerHTML="\
+		<h1 style=\"color:white; background: rgba(0,0,0,0.7)\">\
+			<img src=\"zsy_zenmehuishi.png\"><br>\
+			* zsy 『小老弟，你怎么回事？』 <br>\
+			* 『既然你不想做我男朋友...』<br>\
+			* 『我只好秒了你了...』<br>\
+		</h1>\
+		<br>																											\
+		<button id=\"button1\" style=\"font-size: 24px; color:#000000\" onclick=\"orzzsyLast2()\">										\
+			同意并签字  																								\
+		</button>																										\
+		<br>\
+		<button id=\"button2\" style=\"font-size: 24px; color:#000000\" onclick=\"swapButtons()\">										\
+			我还是不同意  																								\
+		</button>\
 		";
 }
