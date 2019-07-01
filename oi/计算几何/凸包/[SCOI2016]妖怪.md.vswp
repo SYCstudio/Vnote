@@ -1,0 +1,74 @@
+vnote_backup_file_826537664 /home/illya/Documents/vnote_notebooks/oi/计算几何/凸包/[SCOI2016]妖怪.md
+# [SCOI2016]妖怪
+[LOJ2015]
+
+不难得到，每一个妖怪的攻击力是 $x+y\frac{a}{b}+y+x\frac{b}{a}$ ，那么不妨令 $T=\frac{a}{b}$ ，即可化为 $(x+y)(T+\frac{1}{T}$ 。不难发现答案在上凸壳上，因为不在上凸壳上的点有不等式一定不优，那么考虑枚举上凸壳的每一段，这一段的答案根据不等式的相关知识可知是当 T 取 $\sqrt{x+y}$ 时最优，但是当 $T$ 取得该值时，不一定是该妖怪的攻击力最高，所以还要与当前合法区间判定。
+
+```cpp
+#include<cstdio>
+#include<cstdlib>
+#include<cstring>
+#include<algorithm>
+#include<cmath>
+#include<iostream>
+using namespace std;
+
+class Point{
+public:
+    double x,y;
+    double len(){
+        return sqrt(x*x+y*y);
+    }
+};
+
+const int maxN=1010000;
+const double eps=1e-8;
+const double INF=1e18;
+
+int n,St[maxN];
+Point P[maxN];
+
+bool cmpx(Point A,Point B);
+Point operator - (Point A,Point B);
+double Cross(Point A,Point B);
+int main(){
+    scanf("%d",&n);for (int i=1;i<=n;i++) scanf("%lf%lf",&P[i].x,&P[i].y);
+    sort(&P[1],&P[n+1],cmpx);
+    P[n+1]=((Point){0,P[1].y});
+    P[n+2]=((Point){P[n].x,0});
+    n+=2;
+    sort(&P[1],&P[n+1],cmpx);
+    int top=0;
+    for (int i=1;i<=n;i++){
+        while (top>=2&&Cross(P[St[top]]-P[St[top-1]],P[i]-P[St[top-1]])>0) --top;
+        St[++top]=i;
+    }
+    for (int i=1;i<=top;i++) P[i]=P[St[i]];
+    n=top;
+
+    double Ans=INF;
+    for (int i=2;i<n;i++){
+        double l=-(P[i].y-P[i-1].y)/(P[i].x-P[i-1].x);
+        double r=-(P[i].y-P[i+1].y)/(P[i].x-P[i+1].x);
+        if (fabs(l)<eps) l=eps;
+        if (fabs(1/l)<eps) l=1/eps;
+        if (fabs(r)<eps) r=eps;
+        if (fabs(1/r)<eps) r=1/eps;
+        double k=sqrt(P[i].x/P[i].y);
+        if (l<=k&&k<=r) Ans=min(Ans,P[i].x+P[i].y+k*P[i].x+P[i].y/k);
+        Ans=min(Ans,P[i].x+P[i].y+l*P[i].x+P[i].y/l);
+        Ans=min(Ans,P[i].x+P[i].y+r*P[i].x+P[i].y/r);
+    }
+    printf("%.4lf\n",Ans);return 0;
+}
+bool cmpx(Point A,Point B){
+    if (fabs(A.x-B.x)<eps) return A.y>B.y;
+    return A.x<B.x;
+}
+Point operator - (Point A,Point B){
+    return ((Point){A.x-B.x,A.y-B.y});
+}
+double Cross(Point A,Point B){
+    return A.x*B.y-A.y*B.x;
+}
+```
