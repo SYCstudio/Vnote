@@ -17,4 +17,4 @@
 
 本站更新历史可在 [Github](https://github.com/SYCstudio/Vnote) 查看。
 
-本站资瓷：[orzyyb](https://sycstudio.com/orzyyb),[orzxzz](https://sycstudio.com/orzxzz),[orzzsy](https://sycstudio.com/orzzsy),[打篮球](https://sycstudio.com/cxk-ball) ，感谢 @xzz\_233 @iotang 的友情赞助。
+本站资瓷：[orzyyb](https://sycstudio.com/orzyyb),[orzxzz](https://sycstudio.com/orzxzz),[orzzsy](https://sycstudio.com/orzzsy),[打篮球](https://sycstudio.com/cxk-ball) ，[gzy 打篮球](https://sycstudio.com/orzzsy/gzy-ball)感谢 @xzz\_233 @iotang 的友情赞助。
