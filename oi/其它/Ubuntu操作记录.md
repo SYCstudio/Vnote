@@ -338,6 +338,15 @@ cd /var/cache/apt/archives
 sudo rm -rf partial
 ```
 
+### 顶部栏 wine 图标丢失修复
+安装 unity 顶部栏工具：
+
+```plain
+sudo apt-add-repository ppa:fixnix/indicator-systemtray-unity
+sudo apt update
+sudo apt install indicator-systemtray-unity
+```
+
 ## 常见操作
 ### 文件名修改
 #### 运用正则表达式统一在文件头部添加上 asdasdasd
