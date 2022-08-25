@@ -19,4 +19,4 @@ sycstudio 长郡中学2020 届， NOI2019 银牌，现已退役。
 
 本站更新历史可在 [Github](https://github.com/SYCstudio/Vnote) 查看。
 
-本站资瓷：[orzyyb](https://sycstudio.com/orzyyb),[orzxzz](https://sycstudio.com/orzxzz),[orzzsy](https://sycstudio.com/orzzsy),[打篮球](https://sycstudio.com/cxk-ball),[gzy 打篮球](https://sycstudio.com/gzy-ball)感谢 @xzz\_233 @iotang 的友情赞助。
+本站资瓷：[orzyyb](https://oi.sycstudio.com/orzyyb),[orzxzz](https://oi.sycstudio.com/orzxzz),[orzzsy](https://oi.sycstudio.com/orzzsy),[打篮球](https://oi.sycstudio.com/cxk-ball),[gzy 打篮球](https://oi.sycstudio.com/gzy-ball)感谢 @xzz\_233 @iotang 的友情赞助。
